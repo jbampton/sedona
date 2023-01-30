@@ -14,17 +14,10 @@
 package org.apache.sedona.common;
 
 import org.junit.Test;
-import org.locationtech.jts.geom.Coordinate;
-import org.locationtech.jts.geom.Geometry;
-import org.locationtech.jts.geom.GeometryCollection;
-import org.locationtech.jts.geom.GeometryFactory;
-import org.locationtech.jts.geom.LinearRing;
-import org.locationtech.jts.geom.LineString;
-import org.locationtech.jts.geom.MultiLineString;
-import org.locationtech.jts.geom.MultiPoint;
-import org.locationtech.jts.geom.MultiPolygon;
-import org.locationtech.jts.geom.Polygon;
+import org.locationtech.jts.geom.*;
 import org.locationtech.jts.io.ParseException;
+
+import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
@@ -237,5 +230,27 @@ public class FunctionsTest {
         Geometry actualResult = Functions.split(geometryCollection, lineString);
 
         assertNull(actualResult);
+    }
+
+    @Test
+    public void getGoogleS2CellIDs() {
+        Geometry[] geometries = new Geometry[]{
+                GEOMETRY_FACTORY.createPoint(new Coordinate(0.0, 0.1, 1.0)), // test point
+                GEOMETRY_FACTORY.createLineString(coordArray(0.0, 0.0, 1.5, 1.5)), // test linestring
+                GEOMETRY_FACTORY.createPolygon(coordArray(0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0)) // test polygon
+        };
+        for (Geometry geom : geometries) {
+            Long[] cellIDs = Functions.getGoogleS2CellIDs(geom);
+            if (geom instanceof Point) {
+                assertEquals(1, cellIDs.length);
+            }
+            if (geom instanceof LineString) {
+                assertEquals(2, cellIDs.length);
+            }
+            if (geom instanceof Polygon) {
+                assertEquals(4, cellIDs.length);
+            }
+        }
+
     }
 }

@@ -13,6 +13,9 @@
  */
 package org.apache.sedona.common;
 
+import com.google.common.geometry.S2CellId;
+import com.google.common.geometry.S2Point;
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.sedona.common.geometryObjects.Circle;
 import org.apache.sedona.common.utils.GeomUtils;
 import org.apache.sedona.common.utils.GeometryGeoHashEncoder;
@@ -542,5 +545,27 @@ public class Functions {
     public static Geometry split(Geometry input, Geometry blade) {
         // check input geometry
         return new GeometrySplitter(GEOMETRY_FACTORY).split(input, blade);
+    }
+
+
+    /**
+     * get the coordinates of a geometry and transform to Google s2 cell id
+     * @param input Geometry
+     * @return List of coordinates
+     */
+    public static Long[] getGoogleS2CellIDs(Geometry input) {
+        ArrayList<Long> cellIds = new ArrayList<>();
+        for (Coordinate coordinate: input.getCoordinates()) {
+            cellIds.add(
+                    S2CellId.fromPoint(
+                            new S2Point(
+                                    coordinate.getX(),
+                                    coordinate.getY(),
+                                    coordinate.getZ()
+                            )
+                    ).id()
+            );
+        }
+        return cellIds.toArray(new Long[cellIds.size()]);
     }
 }

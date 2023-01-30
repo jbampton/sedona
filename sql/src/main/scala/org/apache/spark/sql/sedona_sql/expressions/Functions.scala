@@ -1055,3 +1055,11 @@ case class ST_Split(inputExpressions: Seq[Expression])
     copy(inputExpressions = newChildren)
   }
 }
+
+case class ST_GetGoogleS2CellIDs(inputExpressions: Seq[Expression])
+  extends InferredUnaryExpression(Functions.getGoogleS2CellIDs) with FoldableExpression {
+
+  protected def withNewChildrenInternal(newChildren: IndexedSeq[Expression]) = {
+    copy(inputExpressions = newChildren)
+  }
+}

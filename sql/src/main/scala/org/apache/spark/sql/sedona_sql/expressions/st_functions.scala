@@ -271,4 +271,7 @@ object st_functions extends DataFrameAPI {
 
   def ST_ZMin(geometry: Column): Column = wrapExpression[ST_ZMin](geometry)
   def ST_ZMin(geometry: String): Column = wrapExpression[ST_ZMin](geometry)
+
+  def ST_GetGoogleS2CellIDs(geometry: Column): Column = wrapExpression[ST_GetGoogleS2CellIDs](geometry)
+  def ST_GetGoogleS2CellIDs(geometry: String): Column = wrapExpression[ST_GetGoogleS2CellIDs](geometry)
 }

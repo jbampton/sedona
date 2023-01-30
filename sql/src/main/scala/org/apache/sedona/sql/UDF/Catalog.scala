@@ -167,7 +167,8 @@ object Catalog {
     function[RS_HTML](),
     function[RS_Array](),
     function[RS_Normalize](),
-    function[RS_Append]()
+    function[RS_Append](),
+    function[ST_GetGoogleS2CellIDs](),
   )
 
   val aggregateExpressions: Seq[Aggregator[Geometry, Geometry, Geometry]] = Seq(
