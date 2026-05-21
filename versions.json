@@ -2,6 +2,8 @@
   {
     "version": "latest-snapshot",
     "title": "latest-snapshot",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   }
 ]
