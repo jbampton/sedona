@@ -200,3 +200,15 @@
 
   }
 }
+
+// Fix palette toggle icons visibility (Material theme integration)
+[data-md-color-media] .md-header__option {
+  display: none !important;
+}
+
+// Show the option that matches the CURRENTLY ACTIVE scheme on the body
+[data-md-color-scheme="default"] .md-header__option[data-md-color-scheme="default"],
+[data-md-color-scheme="slate"] .md-header__option[data-md-color-scheme="slate"],
+body:not([data-md-color-scheme]) .md-header__option[data-md-color-media="(prefers-color-scheme)"] {
+  display: block !important;
+}
