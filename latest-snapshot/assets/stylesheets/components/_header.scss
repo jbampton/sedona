@@ -45,7 +45,6 @@
     // Title
     .md-header__title {
       font-size: 0;
-      display: none !important;
     }
   }
 
@@ -201,4 +200,8 @@
     }
 
   }
+}
+
+.md-header__option {
+    margin: 10px;
 }
