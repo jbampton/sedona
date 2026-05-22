@@ -45,6 +45,15 @@
     // Title
     .md-header__title {
       font-size: 0;
+      display: none !important;
+
+      @media (min-width: 1220px) {
+        // Only show page title on non-homepage if you want
+        body:not(:has(.page-home)) & {
+           display: block !important;
+           font-size: 1rem;
+        }
+      }
     }
   }
 
