@@ -202,10 +202,8 @@
 }
 
 /* Prevent the version dropdown from colliding with the palette selector */
-.md-header__title .md-version {
-  margin-right: 1.5rem;
-  display: inline-block;
-  vertical-align: middle;
+.md-header__option {
+  margin-right: 175px;
 }
 
 /* Ensure the header flex container wraps or stretches gracefully */
