@@ -18,6 +18,9 @@
   --text-secondary: rgba(28, 28, 28, 0.8);
   --card-bg: #fff;
 
+  /* High-contrast utility token for explicitly light surface areas */
+  --text-secondary-on-light: rgba(28, 28, 28, 0.7);
+
   /* ==========================================
      2. MATERIAL THEME INJECTIONS (LIGHT)
      ========================================== */
@@ -52,6 +55,9 @@
   --text-secondary: rgba(245, 245, 245, 0.8) !important;
   --card-bg: #0d1117 !important; /* Deeper GitHub-style slate */
 
+  /* Keep a distinct dark-text variant accessible for persistent white elements */
+  --text-secondary-on-light: rgba(28, 28, 28, 0.75) !important;
+
   /* Override internal Material typography and accents */
   --md-text-color: var(--text-primary) !important;
   --md-text-link-color: #a370f7 !important;
@@ -80,4 +86,15 @@
 body {
   font-family: var(--font-inter);
   color: var(--text-primary);
+}
+
+/*
+   CONTEXTUAL PATCH:
+   If there are components or containers explicitly forced to maintain a
+   white/light background in dark mode, map their secondary text to the high-contrast token.
+*/
+.light-bg-container,
+.md-select__link,
+.md-version__link {
+  color: var(--text-secondary-on-light);
 }
