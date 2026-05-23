@@ -1,39 +1,10 @@
-/* ==========================================================================
-   Global Configuration & Layout Constants
-   ========================================================================== */
 :root {
-  --font-inter: "Inter", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
-  --grid-max-width: 100%;
-}
+  --color-red: #CA463A;
+  --color-red-hover: #EA5547;
+  --color-white: #fff;
+  --color-dark: #1C1C1C;
+  --color-light-blue: #E2ECF3;
+  --color-violet: #7142FF;
 
-/* ==========================================================================
-   Light Mode Theme Overrides (MkDocs Material "default")
-   ========================================================================== */
-[data-md-color-scheme="default"] {
-  /* Core layout hook mappings */
-  --md-primary-fg-color:        var(--color-dark);
-  --md-primary-fg-color--dark:  #e9ecef;
-
-  /* Custom theme variable tokens */
-  --color-dark:                 #ffffff;
-  --color-white:                #121212; // Inverted high-contrast text color
-  --color-red:                  #d90429;
-  --color-surface-muted:        #f8f9fa;
-  --color-border-subtle:        #e9ecef;
-}
-
-/* ==========================================================================
-   Dark Mode Theme Overrides (MkDocs Material "slate")
-   ========================================================================== */
-[data-md-color-scheme="slate"] {
-  /* Core layout hook mappings */
-  --md-primary-fg-color:        var(--color-dark);
-  --md-primary-fg-color--dark:  #000000;
-
-  /* Custom theme variable tokens */
-  --color-dark:                 #0f1115; // Dark, deep slate-monochromatic canvas
-  --color-white:                #ffffff; // Sharp text readability
-  --color-red:                  #ef233c; // Vibrant retro red accent matching active tabs
-  --color-surface-muted:        #161a22;
-  --color-border-subtle:        #323232;
+  --font-inter: 'Inter', sans-serif;
 }

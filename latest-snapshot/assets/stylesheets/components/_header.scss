@@ -21,17 +21,8 @@
       justify-content: flex-end;
       align-items: center;
       gap: 32px;
-
-      // Ensure the palette container icon displays smoothly
-      .md-header__option {
-        display: flex;
-        align-items: center;
-        margin: 0;
-        padding: 0;
-      }
-
       @media (min-width: 1220px) {
-        .md-search__inner {
+        .md-search__inner{
           max-width: 510px;
         }
       }
