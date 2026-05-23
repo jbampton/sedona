@@ -31,9 +31,8 @@
   --md-primary-bg-color: var(--color-white) !important;
   --md-default-bg-color: var(--card-bg) !important;
 
-  /* FIX FOR LIGHT MODE HEADER ELEMENTS:
-     Forces the header text, version dropdown, and theme icon to use your dark color */
-  --md-primary-fg-color: var(--color-dark) !important;
+  /* LIGHT MODE HEADER: White background container with dark elements */
+  --md-primary-fg-color: var(--color-white) !important;
   --md-header-fg-color: var(--color-dark) !important;
   --md-header-fg-color--transparent: rgba(28, 28, 28, 0.6) !important;
 
@@ -55,14 +54,13 @@
 
   /* Override internal Material typography and accents */
   --md-text-color: var(--text-primary) !important;
-  --md-text-link-color: #a370f7 !important; /* High contrast link color for dark text */
+  --md-text-link-color: #a370f7 !important;
   --md-primary-bg-color: #0d1117 !important;
   --md-default-bg-color: var(--card-bg) !important;
   --md-default-fg-color: var(--text-primary) !important;
 
-  /* FIX FOR DARK MODE HEADER ELEMENTS:
-     Forces the header text, version dropdown, and theme icon to be vibrant white */
-  --md-primary-fg-color: #ffffff !important;
+  /* DARK MODE HEADER: Dark background container with white elements */
+  --md-primary-fg-color: #161b22 !important;
   --md-header-fg-color: #ffffff !important;
   --md-header-fg-color--transparent: rgba(255, 255, 255, 0.7) !important;
 
