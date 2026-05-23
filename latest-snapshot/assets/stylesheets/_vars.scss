@@ -18,8 +18,8 @@
   --text-secondary: rgba(28, 28, 28, 0.8);
   --card-bg: #fff;
 
-  /* High-contrast utility token for explicitly light surface areas */
-  --text-secondary-on-light: rgba(28, 28, 28, 0.7);
+  /* High-contrast fallback token for explicitly light surface areas */
+  --text-secondary-on-light: rgba(28, 28, 28, 0.75);
 
   /* ==========================================
      2. MATERIAL THEME INJECTIONS (LIGHT)
@@ -89,12 +89,20 @@ body {
 }
 
 /*
-   CONTEXTUAL PATCH:
-   If there are components or containers explicitly forced to maintain a
-   white/light background in dark mode, map their secondary text to the high-contrast token.
+   CONTEXTUAL CONTRAST PROTECTION:
+   Forces menus, options, selections, and interactive components that maintain
+   a white background inside dark mode to switch over to a high-visibility dark text color.
 */
-.light-bg-container,
 .md-select__link,
-.md-version__link {
-  color: var(--text-secondary-on-light);
+.md-version__link,
+.md-option + label,
+.md-header__option label,
+.light-bg-container {
+  color: var(--text-secondary-on-light) !important;
+}
+
+/* Handle select dropdown icon indicators on light nodes */
+[data-md-color-scheme="slate"] .md-select__link::after,
+[data-md-color-scheme="slate"] .md-version__link::after {
+  background-color: var(--text-secondary-on-light) !important;
 }
