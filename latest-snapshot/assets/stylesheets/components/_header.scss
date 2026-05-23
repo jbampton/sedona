@@ -1,60 +1,40 @@
 .md-header {
-  box-shadow: none;
-  background-color: var(--color-dark);
+  // Enforce native theme text color tokens inside custom part structural layout blocks
+  .left-part,
+  .right-part {
+    color: var(--md-header-fg-color);
 
-  .md-header__inner {
-    background-color: var(--color-dark);
-    min-height: 80px;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .left-part {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
+    // Fix invisible titles
+    .md-header__title,
+    .md-header__topic,
+    span.md-ellipsis {
+      color: inherit;
     }
 
-    .right-part {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      gap: 32px;
+    // Fix invisible toggle, search, and menu icons
+    .md-header__button,
+    .md-icon,
+    svg {
+      color: inherit;
+      fill: currentColor;
+    }
 
-      // Ensure the palette container icon displays smoothly
-      .md-header__option {
-        display: flex;
-        align-items: center;
-        margin: 0;
-        padding: 0;
-      }
+    // Ensure interactive options inherit correct color states
+    .md-header__option {
+      color: inherit;
 
-      @media (min-width: 1220px) {
-        .md-search__inner {
-          max-width: 510px;
-        }
+      label {
+        color: inherit;
+        cursor: pointer;
       }
     }
 
-    // Logo
-    .header-logo {
-      padding: 0;
-      margin: 0;
-
-      img, svg {
-        height: 42px;
-        width: auto;
-        display: block;
-        object-fit: contain;
-      }
-    }
-
-    // Title
-    .md-header__title {
-      font-size: 0;
+    // Maintain repository info link visibility
+    .md-header__source {
+      color: inherit;
     }
   }
+
 
   // Mobile Menu
   @media (max-width: 1219px) {
