@@ -200,16 +200,3 @@
 
   }
 }
-
-/* Prevent the version dropdown from colliding with the palette selector */
-.md-header__option {
-  margin-left: 180px;
-}
-
-/* Ensure the header flex container wraps or stretches gracefully */
-.md-header__ellipsis {
-  display: flex !important;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}

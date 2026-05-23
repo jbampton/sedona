@@ -1,112 +1,39 @@
+/* ==========================================================================
+   Global Configuration & Layout Constants
+   ========================================================================== */
 :root {
-  /* ==========================================================================
-     1. BRAND COLOR GRAPH & GEOMETRY TOKENS
-     ========================================================================== */
-  --color-red: #CA463A;
-  --color-red-hover: #EA5547;
-  --color-white: #FFFFFF;
-  --color-dark: #1C1C1C;
-  --color-light-blue: #E2ECF3;
-  --color-violet: #7142FF;
-
-  --font-inter: 'Inter', sans-serif;
-
-  /* Structural UI System Parameters */
-  --hero-bg: linear-gradient(182.44deg, #9FD2F4 -17.31%, #F3F3F3 97.95%);
-  --section-bg-light: #E2ECF3;
-  --text-primary: #1C1C1C;
-  --text-secondary: rgba(28, 28, 28, 0.8);
-  --card-bg: #FFFFFF;
-
-  /* Dedicated fallbacks for explicitly persistent light structural frames */
-  --text-on-light-fallback: #1C1C1C;
-  --text-muted-on-light-fallback: rgba(28, 28, 28, 0.75);
-
-  /* ==========================================================================
-     2. MKDOCS MATERIAL BASE ARCHITECTURE (LIGHT VARIANT)
-     ========================================================================== */
-  --md-text-color: var(--text-primary);
-  --md-text-link-color: var(--color-violet);
-  --md-code-font-family: 'Fira Code', monospace;
-  --md-typeset-font-family: var(--font-inter);
-
-  /* Global Layout Component Resets */
-  --md-primary-bg-color: var(--color-white) !important;
-  --md-default-bg-color: var(--card-bg) !important;
-
-  /* Navigation Header Elements */
-  --md-primary-fg-color: var(--color-white) !important;
-  --md-header-fg-color: var(--color-dark) !important;
-  --md-header-fg-color--transparent: rgba(28, 28, 28, 0.6) !important;
-
-  /* Typography / Core Code Syntax Elements */
-  --md-code-bg-color: #F7F9FA;
-  --md-code-fg-color: #24292E;
+  --font-inter: "Inter", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  --grid-max-width: 100%;
 }
 
 /* ==========================================================================
-   3. MATERIAL THEME EXTENSION OVERRIDES (SLATE SYSTEM DARK SCHEME)
+   Light Mode Theme Overrides (MkDocs Material "default")
+   ========================================================================== */
+[data-md-color-scheme="default"] {
+  /* Core layout hook mappings */
+  --md-primary-fg-color:        var(--color-dark);
+  --md-primary-fg-color--dark:  #e9ecef;
+
+  /* Custom theme variable tokens */
+  --color-dark:                 #ffffff;
+  --color-white:                #121212; // Inverted high-contrast text color
+  --color-red:                  #d90429;
+  --color-surface-muted:        #f8f9fa;
+  --color-border-subtle:        #e9ecef;
+}
+
+/* ==========================================================================
+   Dark Mode Theme Overrides (MkDocs Material "slate")
    ========================================================================== */
 [data-md-color-scheme="slate"] {
-  /* System Dark Canvas Elements */
-  --hero-bg: linear-gradient(182.44deg, #132F4C -17.31%, #0A1929 97.95%) !important;
-  --section-bg-light: #161B22 !important;
-  --text-primary: #F5F5F5 !important;
-  --text-secondary: rgba(245, 245, 245, 0.8) !important;
-  --card-bg: #0D1117 !important;
+  /* Core layout hook mappings */
+  --md-primary-fg-color:        var(--color-dark);
+  --md-primary-fg-color--dark:  #000000;
 
-  /* Core Palette Parameter Remaps */
-  --md-text-color: var(--text-primary) !important;
-  --md-text-link-color: #A370F7 !important;
-  --md-primary-bg-color: #0D1117 !important;
-  --md-default-bg-color: var(--card-bg) !important;
-  --md-default-fg-color: var(--text-primary) !important;
-
-  /* Native Component Borders and Separators */
-  --md-typeset-table-color: rgba(245, 245, 245, 0.12) !important;
-  --md-typeset-hr-color: rgba(245, 245, 245, 0.12) !important;
-
-  /* Slate Navigation Header Environment */
-  --md-primary-fg-color: #161B22 !important;
-  --md-header-fg-color: #FFFFFF !important;
-  --md-header-fg-color--transparent: rgba(255, 255, 255, 0.7) !important;
-
-  /* Code Syntax Dark Target Mapping */
-  --md-code-bg-color: #1F242C !important;
-  --md-code-fg-color: #E6EDF3 !important;
-}
-
-/* ==========================================================================
-   4. LAYOUT COMPONENT HOOKS & CONTRAST PROTECTION
-   ========================================================================== */
-body {
-  font-family: var(--font-inter);
-  color: var(--text-primary);
-}
-
-/*
-   ACCESSIBILITY REINFORCEMENT:
-   Targets persistent elements inside language switch drop-downs (.sd-lang-switch)
-   and standard option elements ensuring structural popovers keep readable text.
-*/
-.sd-lang-switch .sd-lang-switch__menu a,
-.sd-lang-switch__link,
-.md-select__link,
-.md-version__link,
-.md-header__option label {
-  color: var(--text-on-light-fallback) !important;
-}
-
-.sd-lang-switch .sd-lang-switch__menu a:hover,
-.sd-lang-switch__link:hover {
-  color: var(--color-red) !important;
-  background-color: var(--color-light-blue) !important;
-}
-
-/* Ensures layout icons and glyph markers inside selection blocks stay crisp */
-.sd-lang-switch__glyph,
-[data-md-color-scheme="slate"] .md-select__link::after,
-[data-md-color-scheme="slate"] .md-version__link::after {
-  fill: var(--text-muted-on-light-fallback) !important;
-  color: var(--text-muted-on-light-fallback) !important;
+  /* Custom theme variable tokens */
+  --color-dark:                 #0f1115; // Dark, deep slate-monochromatic canvas
+  --color-white:                #ffffff; // Sharp text readability
+  --color-red:                  #ef233c; // Vibrant retro red accent matching active tabs
+  --color-surface-muted:        #161a22;
+  --color-border-subtle:        #323232;
 }
