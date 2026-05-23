@@ -1,4 +1,7 @@
 :root {
+  /* ==========================================
+     1. CORE THEME BRAND DESIGN
+     ========================================== */
   --color-red: #CA463A;
   --color-red-hover: #EA5547;
   --color-white: #fff;
@@ -8,18 +11,65 @@
 
   --font-inter: 'Inter', sans-serif;
 
-  // Added variables for dark mode support
+  /* Global Layout Contexts */
   --hero-bg: linear-gradient(182.44deg, #9FD2F4 -17.31%, #F3F3F3 97.95%);
   --section-bg-light: #E2ECF3;
   --text-primary: #1C1C1C;
   --text-secondary: rgba(28, 28, 28, 0.8);
   --card-bg: #fff;
+
+  /* ==========================================
+     2. MATERIAL THEME INJECTIONS (LIGHT)
+     ========================================== */
+  /* Map your custom variables to system components */
+  --md-text-color: var(--text-primary);
+  --md-text-link-color: var(--color-violet);
+  --md-code-font-family: 'Fira Code', monospace;
+  --md-typeset-font-family: var(--font-inter);
+
+  /* Headers and Containers */
+  --md-primary-fg-color: var(--color-dark) !important;
+  --md-primary-bg-color: var(--color-white) !important;
+  --md-default-bg-color: var(--card-bg) !important;
+
+  /* Admonitions and Code Block Overrides */
+  --md-code-bg-color: #f7f9fa;
+  --md-code-fg-color: #24292e;
 }
 
+/* ==========================================
+   3. MATERIAL THEME INJECTIONS (SLATE DARK MODE)
+   ========================================== */
 [data-md-color-scheme="slate"] {
+  /* Layout Updates */
   --hero-bg: linear-gradient(182.44deg, #132f4c -17.31%, #0a1929 97.95%) !important;
   --section-bg-light: #161b22 !important;
   --text-primary: #f5f5f5 !important;
   --text-secondary: rgba(245, 245, 245, 0.8) !important;
-  --card-bg: #161b22 !important;
+  --card-bg: #0d1117 !important; /* Deeper GitHub-style slate */
+
+  /* Override internal Material typography and accents */
+  --md-text-color: var(--text-primary) !important;
+  --md-text-link-color: #a370f7 !important; /* High contrast link color for dark text */
+  --md-primary-fg-color: #161b22 !important;  /* Match header with deeper palette */
+  --md-primary-bg-color: #0d1117 !important;
+  --md-default-bg-color: var(--card-bg) !important;
+  --md-default-fg-color: var(--text-primary) !important;
+
+  /* Clean up Code Syntax Backgrounds for Dark Viewports */
+  --md-code-bg-color: #1f242c !important;
+  --md-code-fg-color: #e6edf3 !important;
+
+  /* Native Component Borders and Separators */
+  --md-typeset-table-color: rgba(245, 245, 245, 0.12) !important;
+  --md-typeset-hr-color: rgba(245, 245, 245, 0.12) !important;
+}
+
+/* ==========================================
+   4. LAYOUT PATCHES & FIXES
+   ========================================== */
+/* Apply global typographic changes cleanly */
+body {
+  font-family: var(--font-inter);
+  color: var(--text-primary);
 }
