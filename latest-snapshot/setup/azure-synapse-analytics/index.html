@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -35,7 +35,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -111,7 +111,7 @@
       </div>
     
     <div style="background: #CA463A; color: white; text-align: center; padding: 0.5rem;">
-    <a href="../release-notes/" title="Announcement">Apache Sedona 1.9.0 is out now, featuring Spark 4.1 support, proj4sedona CRS transformation, Bing Tile functions, and more!</a>
+        <a href="../release-notes/" title="Announcement">🎉 Apache Sedona 1.9.1 is out now! 🗺️ Geography SQL functions, Box2D & Box3D types, raster Python UDFs & more. Read the release notes →</a>
   </div>
   
       <!--
@@ -2049,6 +2049,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../tutorial/files/netcdfmetadata-sedona-spark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NetCDF metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../tutorial/files/stac-sedona-spark/" class="md-nav__link">
         
   
@@ -3205,6 +3233,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../api/sql/Raster-UDF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raster UDFs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../api/sql/Raster-affine-transformation/" class="md-nav__link">
         
   
@@ -3571,6 +3627,34 @@
     
   
     Sedona R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/geopandas-coverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GeoPandas API coverage
   
 
     
@@ -4332,6 +4416,34 @@
     
   
     Geometry Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/flink/Geography-Functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geography Functions
   
 
     
@@ -6066,17 +6178,17 @@
 <span class="n">config</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">SedonaContext</span><span class="o">.</span><span class="n">builder</span><span class="p">()</span>
     <span class="o">.</span><span class="n">config</span><span class="p">(</span>
-        <span class="s2">&quot;spark.jars.packages&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;org.apache.sedona:sedona-spark-shaded-3.4_2.12-1.6.1,&quot;</span>
-        <span class="s2">&quot;org.datasyslab:geotools-wrapper-1.6.1-28.2&quot;</span><span class="p">,</span>
+        <span class="s2">"spark.jars.packages"</span><span class="p">,</span>
+        <span class="s2">"org.apache.sedona:sedona-spark-shaded-3.4_2.12-1.6.1,"</span>
+        <span class="s2">"org.datasyslab:geotools-wrapper-1.6.1-28.2"</span><span class="p">,</span>
     <span class="p">)</span>
-    <span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="s2">&quot;spark.serializer&quot;</span><span class="p">,</span> <span class="s2">&quot;org.apache.spark.serializer.KryoSerializer&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="s2">"spark.serializer"</span><span class="p">,</span> <span class="s2">"org.apache.spark.serializer.KryoSerializer"</span><span class="p">)</span>
     <span class="o">.</span><span class="n">config</span><span class="p">(</span>
-        <span class="s2">&quot;spark.kryo.registrator&quot;</span><span class="p">,</span> <span class="s2">&quot;org.apache.sedona.core.serde.SedonaKryoRegistrator&quot;</span>
+        <span class="s2">"spark.kryo.registrator"</span><span class="p">,</span> <span class="s2">"org.apache.sedona.core.serde.SedonaKryoRegistrator"</span>
     <span class="p">)</span>
     <span class="o">.</span><span class="n">config</span><span class="p">(</span>
-        <span class="s2">&quot;spark.sql.extensions&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;org.apache.sedona.viz.sql.SedonaVizExtensions,org.apache.sedona.sql.SedonaSqlExtensions&quot;</span><span class="p">,</span>
+        <span class="s2">"spark.sql.extensions"</span><span class="p">,</span>
+        <span class="s2">"org.apache.sedona.viz.sql.SedonaVizExtensions,org.apache.sedona.sql.SedonaSqlExtensions"</span><span class="p">,</span>
     <span class="p">)</span>
     <span class="o">.</span><span class="n">getOrCreate</span><span class="p">()</span>
 <span class="p">)</span>
@@ -6084,7 +6196,7 @@
 <span class="n">sedona</span> <span class="o">=</span> <span class="n">SedonaContext</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
 </code></pre></div>
 <p>Run a test</p>
-<div class="highlight"><pre><span></span><code><span class="n">sedona</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">&quot;SELECT ST_GeomFromEWKT(&#39;SRID=4269;POINT(40.7128 -74.0060)&#39;)&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="n">sedona</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">"SELECT ST_GeomFromEWKT('SRID=4269;POINT(40.7128 -74.0060)')"</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
 <p>If you see the output of the point, then the installation is successful. Are you are all done with the setup.</p>
 <h2 id="packages-for-sedona-160-on-spark-34-python-10">Packages for Sedona 1.6.0 on Spark 3.4 Python 10<a class="headerlink" href="#packages-for-sedona-160-on-spark-34-python-10" title="Permanent link">&para;</a></h2>
@@ -6132,7 +6244,7 @@ geotools-wrapper-1.6.0-28.2.jar
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>sshd.service
 </code></pre></div>
 <p>Identify the ip of the VM (I'm using Hyper-V on windows 10 desktop)</p>
-<div class="highlight"><pre><span></span><code>Get-VMNetworkAdapter -VMName &quot;Synapse Spark 3.4 Python 3.10 Sedona 1.6.1&quot; | Select-Object -ExpandProperty IPAddresses
+<div class="highlight"><pre><span></span><code>Get-VMNetworkAdapter -VMName "Synapse Spark 3.4 Python 3.10 Sedona 1.6.1" | Select-Object -ExpandProperty IPAddresses
 </code></pre></div>
 <h3 id="step-6-install-miniconda">Step 6: install Miniconda<a class="headerlink" href="#step-6-install-miniconda" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/tmp
@@ -6153,7 +6265,7 @@ chmod<span class="w"> </span>+x<span class="w"> </span>Miniconda3-latest-Linux-x
 <p>if you get further but different errors from <code>pip</code> after making the above change, ignore them you can still proceed</p>
 <h3 id="step-9-install-sedona-python-packages">Step 9: install sedona python packages<a class="headerlink" href="#step-9-install-sedona-python-packages" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>conda<span class="w"> </span>activate<span class="w"> </span>synapse
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;apache-sedona==1.6.1&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>requirements.txt
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"apache-sedona==1.6.1"</span><span class="w"> </span>&gt;<span class="w"> </span>requirements.txt
 pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt<span class="w"> </span>&gt;<span class="w"> </span>pip-output.txt
 </code></pre></div>
 <h3 id="step-10-identify-python-packages-to-download">Step 10: identify Python packages to download<a class="headerlink" href="#step-10-identify-python-packages-to-download" title="Permanent link">&para;</a></h3>
@@ -6316,7 +6428,7 @@ Downloading click_plugins-1.1.1-py2.py3-none-any.whl (7.5 kB)
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["announce.dismiss", "content.code.copy", "content.action.edit", "search.highlight", "search.share", "search.suggest", "navigation.footer", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.tabs.sticky", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": ["latest"], "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../assets/javascripts/main.min.js"></script>
       

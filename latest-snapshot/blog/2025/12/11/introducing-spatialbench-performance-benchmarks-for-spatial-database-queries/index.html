@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -35,7 +35,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -111,7 +111,7 @@
       </div>
     
     <div style="background: #CA463A; color: white; text-align: center; padding: 0.5rem;">
-    <a href="../../../../../setup/release-notes/" title="Announcement">Apache Sedona 1.9.0 is out now, featuring Spark 4.1 support, proj4sedona CRS transformation, Bing Tile functions, and more!</a>
+        <a href="../../../../../setup/release-notes/" title="Announcement">🎉 Apache Sedona 1.9.1 is out now! 🗺️ Geography SQL functions, Box2D & Box3D types, raster Python UDFs & more. Read the release notes →</a>
   </div>
   
       <!--
@@ -1767,6 +1767,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../../tutorial/files/netcdfmetadata-sedona-spark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NetCDF metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../../tutorial/files/stac-sedona-spark/" class="md-nav__link">
         
   
@@ -2923,6 +2951,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../../api/sql/Raster-UDF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raster UDFs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../../api/sql/Raster-affine-transformation/" class="md-nav__link">
         
   
@@ -3289,6 +3345,34 @@
     
   
     Sedona R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../api/geopandas-coverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GeoPandas API coverage
   
 
     
@@ -4050,6 +4134,34 @@
     
   
     Geometry Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../api/flink/Geography-Functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geography Functions
   
 
     
@@ -5572,7 +5684,7 @@
                     <span class="md-profile__description">
                       <strong>
                         
-                          Pranav Toggi
+                          <a href="../../../../author/pranav/">Pranav Toggi</a>
                         
                       </strong>
                       <br>
@@ -5587,7 +5699,7 @@
                     <span class="md-profile__description">
                       <strong>
                         
-                          James Willis
+                          <a href="../../../../author/james/">James Willis</a>
                         
                       </strong>
                       <br>
@@ -5602,7 +5714,7 @@
                     <span class="md-profile__description">
                       <strong>
                         
-                          Jia Yu
+                          <a href="../../../../author/jia/">Jia Yu</a>
                         
                       </strong>
                       <br>
@@ -5617,7 +5729,7 @@
                     <span class="md-profile__description">
                       <strong>
                         
-                          Matthew Powers
+                          <a href="../../../../author/matt_powers/">Matthew Powers</a>
                         
                       </strong>
                       <br>
@@ -5759,13 +5871,13 @@
 <h2 id="example-spatial-query">Example spatial query<a class="headerlink" href="#example-spatial-query" title="Permanent link">&para;</a></h2>
 <p>Here’s an example query that computes monthly statistics for ride-sharing trips originating within 15 kilometers of Sedona, Arizona, a city in the US.</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span>
-<span class="w">    </span><span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">t_pickuptime</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">pickup_month</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">t_tripkey</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total_trips</span><span class="p">,</span>
+<span class="w">    </span><span class="n">DATE_TRUNC</span><span class="p">(</span><span class="s1">'month'</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">t_pickuptime</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">pickup_month</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">t_tripkey</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total_trips</span><span class="p">,</span>
 <span class="w">    </span><span class="k">AVG</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">t_distance</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_distance</span><span class="p">,</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">t_dropofftime</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">t_pickuptime</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_duration</span><span class="p">,</span>
 <span class="w">    </span><span class="k">AVG</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">t_fare</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_fare</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">trip</span><span class="w"> </span><span class="n">t</span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">ST_DWithin</span><span class="p">(</span>
 <span class="w">    </span><span class="n">ST_GeomFromWKB</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">t_pickuploc</span><span class="p">),</span>
-<span class="w">    </span><span class="n">ST_GeomFromText</span><span class="p">(</span><span class="s1">&#39;POLYGON((-111.9060 34.7347, -111.6160 34.7347, -111.6160 35.0047, -111.9060 35.0047, -111.9060 34.7347))&#39;</span><span class="p">),</span><span class="w"> </span><span class="c1">-- 10km bounding box around Sedona</span>
+<span class="w">    </span><span class="n">ST_GeomFromText</span><span class="p">(</span><span class="s1">'POLYGON((-111.9060 34.7347, -111.6160 34.7347, -111.6160 35.0047, -111.9060 35.0047, -111.9060 34.7347))'</span><span class="p">),</span><span class="w"> </span><span class="c1">-- 10km bounding box around Sedona</span>
 <span class="w">    </span><span class="mi">0</span><span class="p">.</span><span class="mi">045</span><span class="w"> </span><span class="c1">-- Additional 5km buffer</span>
 <span class="p">)</span>
 <span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">pickup_month</span>
@@ -5852,6 +5964,13 @@
 <p>You can also create issues and make code contributions.  The codebase is open source and accepts contributions.</p>
 <p>We are interested in running the benchmarks on different engines.  Writing the code to reliably provision clusters and run benchmarks is complex, especially for distributed engines.  Let us know if you’re interested in developing automated scripts to provision cloud clusters and run benchmarks using distributed open-source solutions.</p>
 <p>SpatialBench strives to be at the forefront of benchmarking, and you can also use this project for academic research.  We encourage papers on spatial benchmarking and are happy to collaborate with academics.</p>
+<div class="admonition tip">
+<p class="admonition-title">Star Apache Sedona on GitHub</p>
+<p>A star takes two seconds and helps others discover the projects.</p>
+<p><a class="md-button md-button--primary" href="https://github.com/apache/sedona" rel="noopener" target="_blank">apache/sedona</a>
+<a class="md-button" href="https://github.com/apache/sedona-db" rel="noopener" target="_blank">apache/sedona-db</a>
+<a class="md-button" href="https://github.com/apache/sedona-spatialbench" rel="noopener" target="_blank">apache/sedona-spatialbench</a></p>
+</div>
 
 
 
@@ -5993,7 +6112,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["announce.dismiss", "content.code.copy", "content.action.edit", "search.highlight", "search.share", "search.suggest", "navigation.footer", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.tabs.sticky", "navigation.top"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": ["latest"], "provider": "mike"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../../../assets/javascripts/main.min.js"></script>
       

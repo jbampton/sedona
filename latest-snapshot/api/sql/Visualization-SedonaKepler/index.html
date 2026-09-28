@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -35,7 +35,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -111,7 +111,7 @@
       </div>
     
     <div style="background: #CA463A; color: white; text-align: center; padding: 0.5rem;">
-    <a href="../../../setup/release-notes/" title="Announcement">Apache Sedona 1.9.0 is out now, featuring Spark 4.1 support, proj4sedona CRS transformation, Bing Tile functions, and more!</a>
+        <a href="../../../setup/release-notes/" title="Announcement">🎉 Apache Sedona 1.9.1 is out now! 🗺️ Geography SQL functions, Box2D & Box3D types, raster Python UDFs & more. Read the release notes →</a>
   </div>
   
       <!--
@@ -1770,6 +1770,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../tutorial/files/netcdfmetadata-sedona-spark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NetCDF metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../tutorial/files/stac-sedona-spark/" class="md-nav__link">
         
   
@@ -3021,6 +3049,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../Raster-UDF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raster UDFs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Raster-affine-transformation/" class="md-nav__link">
         
   
@@ -3387,6 +3443,34 @@
     
   
     Sedona R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geopandas-coverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GeoPandas API coverage
   
 
     
@@ -4148,6 +4232,34 @@
     
   
     Geometry Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flink/Geography-Functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geography Functions
   
 
     
@@ -5648,7 +5760,7 @@
 <h3 id="creating-a-map-object-using-sedonakeplercreate_map"><strong>Creating a map object using SedonaKepler.create_map</strong><a class="headerlink" href="#creating-a-map-object-using-sedonakeplercreate_map" title="Permanent link">&para;</a></h3>
 <p>SedonaKepler exposes a create_map API with the following signature:</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">create_map</span><span class="p">(</span>
-    <span class="n">df</span><span class="p">:</span> <span class="n">SedonaDataFrame</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;unnamed&quot;</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">df</span><span class="p">:</span> <span class="n">SedonaDataFrame</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"unnamed"</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">map</span><span class="p">:</span> <span class="o">...</span>
 </code></pre></div>
 <p>The parameter 'name' is used to associate the passed SedonaDataFrame in the map object and any config applied to the map is linked to this name. It is recommended you pass a unique identifier to the dataframe here.</p>
@@ -5663,7 +5775,7 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="nb">map</span> <span class="o">=</span> <span class="n">SedonaKepler</span><span class="o">.</span><span class="n">create_map</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">groupedresult</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;AirportCount&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nb">map</span> <span class="o">=</span> <span class="n">SedonaKepler</span><span class="o">.</span><span class="n">create_map</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">groupedresult</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"AirportCount"</span><span class="p">)</span>
 <span class="nb">map</span>
 </code></pre></div>
 </div>
@@ -5672,7 +5784,7 @@
 </div>
 <h3 id="adding-sedonadataframe-to-a-map-object-using-sedonakepleradd_df"><strong>Adding SedonaDataFrame to a map object using SedonaKepler.add_df</strong><a class="headerlink" href="#adding-sedonadataframe-to-a-map-object-using-sedonakepleradd_df" title="Permanent link">&para;</a></h3>
 <p>SedonaKepler exposes an add_df API with the following signature:</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">add_df</span><span class="p">(</span><span class="nb">map</span><span class="p">,</span> <span class="n">df</span><span class="p">:</span> <span class="n">SedonaDataFrame</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;unnamed&quot;</span><span class="p">):</span> <span class="o">...</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">add_df</span><span class="p">(</span><span class="nb">map</span><span class="p">,</span> <span class="n">df</span><span class="p">:</span> <span class="n">SedonaDataFrame</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"unnamed"</span><span class="p">):</span> <span class="o">...</span>
 </code></pre></div>
 <p>This API can be used to add a SedonaDataFrame to an already created map object. The map object passed is directly mutated and nothing is returned.</p>
 <p>The parameters name has the same conditions as 'create_map'</p>
@@ -5688,7 +5800,7 @@
 </div>
 </div>
 <div class="highlight"><pre><span></span><code><span class="nb">map</span> <span class="o">=</span> <span class="n">SedonaKepler</span><span class="o">.</span><span class="n">create_map</span><span class="p">()</span>
-<span class="n">SedonaKepler</span><span class="o">.</span><span class="n">add_df</span><span class="p">(</span><span class="nb">map</span><span class="p">,</span> <span class="n">groupedresult</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;AirportCount&quot;</span><span class="p">)</span>
+<span class="n">SedonaKepler</span><span class="o">.</span><span class="n">add_df</span><span class="p">(</span><span class="nb">map</span><span class="p">,</span> <span class="n">groupedresult</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"AirportCount"</span><span class="p">)</span>
 <span class="nb">map</span>
 </code></pre></div>
 </div>
@@ -5842,7 +5954,7 @@ For more details refer to keplerGl documentation <a href="https://docs.kepler.gl
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["announce.dismiss", "content.code.copy", "content.action.edit", "search.highlight", "search.share", "search.suggest", "navigation.footer", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.tabs.sticky", "navigation.top"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": ["latest"], "provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../assets/javascripts/main.min.js"></script>
       

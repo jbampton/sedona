@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -35,7 +35,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -111,7 +111,7 @@
       </div>
     
     <div style="background: #CA463A; color: white; text-align: center; padding: 0.5rem;">
-    <a href="../../../setup/release-notes/" title="Announcement">Apache Sedona 1.9.0 已正式发布，新增 Spark 4.1 支持、proj4sedona 坐标系转换、Bing Tile 函数等众多特性！</a>
+        <a href="../../../setup/release-notes/" title="Announcement">🎉 Apache Sedona 1.9.1 已正式发布！🗺️ 新增 Geography SQL 函数、Box2D 与 Box3D 类型、栅格 Python UDF 等。查看发布说明 →</a>
   </div>
   
       <!--
@@ -1772,6 +1772,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../files/netcdfmetadata-sedona-spark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NetCDF metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../files/stac-sedona-spark/" class="md-nav__link">
         
   
@@ -3183,6 +3211,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../api/sql/Raster-UDF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    栅格 UDF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../api/sql/Raster-affine-transformation/" class="md-nav__link">
         
   
@@ -3549,6 +3605,34 @@
     
   
     Sedona R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/geopandas-coverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GeoPandas API 覆盖情况
   
 
     
@@ -4310,6 +4394,34 @@
     
   
     几何函数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/flink/Geography-Functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    地理函数
   
 
     
@@ -5986,19 +6098,19 @@
 <p>在程序开头使用以下代码创建 Sedona 配置。如果您已经有了由 Wherobots / AWS EMR / Databricks 创建的 SparkSession（通常名为 <code>spark</code>），可跳过此步骤直接使用 <code>spark</code>。</p>
 <p><mark>Sedona &gt;= 1.4.1=</mark></p>
 <div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">SedonaContext</span><span class="p">.</span><span class="n">builder</span><span class="p">()</span>
-<span class="w">        </span><span class="p">.</span><span class="n">config</span><span class="p">(</span><span class="s">&quot;spark.kryo.registrator&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">classOf</span><span class="p">[</span><span class="nc">SedonaVizKryoRegistrator</span><span class="p">].</span><span class="n">getName</span><span class="p">)</span><span class="w"> </span><span class="c1">// org.apache.sedona.viz.core.Serde.SedonaVizKryoRegistrator</span>
-<span class="w">        </span><span class="p">.</span><span class="n">master</span><span class="p">(</span><span class="s">&quot;local[*]&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// 集群模式下请删除此行</span>
-<span class="w">        </span><span class="p">.</span><span class="n">appName</span><span class="p">(</span><span class="s">&quot;Sedona Viz&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// 改成合适的名字</span>
+<span class="w">        </span><span class="p">.</span><span class="n">config</span><span class="p">(</span><span class="s">"spark.kryo.registrator"</span><span class="p">,</span><span class="w"> </span><span class="k">classOf</span><span class="p">[</span><span class="nc">SedonaVizKryoRegistrator</span><span class="p">].</span><span class="n">getName</span><span class="p">)</span><span class="w"> </span><span class="c1">// org.apache.sedona.viz.core.Serde.SedonaVizKryoRegistrator</span>
+<span class="w">        </span><span class="p">.</span><span class="n">master</span><span class="p">(</span><span class="s">"local[*]"</span><span class="p">)</span><span class="w"> </span><span class="c1">// 集群模式下请删除此行</span>
+<span class="w">        </span><span class="p">.</span><span class="n">appName</span><span class="p">(</span><span class="s">"Sedona Viz"</span><span class="p">)</span><span class="w"> </span><span class="c1">// 改成合适的名字</span>
 <span class="w">        </span><span class="p">.</span><span class="n">getOrCreate</span><span class="p">()</span>
 </code></pre></div>
 <p><mark>Sedona &lt;1.4.1</mark></p>
 <p>下面这种方式自 Sedona 1.4.1 起已弃用，请改用上面的方式。</p>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="n">sparkSession</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">SparkSession</span><span class="p">.</span><span class="n">builder</span><span class="p">()</span>
-<span class="p">.</span><span class="n">master</span><span class="p">(</span><span class="s">&quot;local[*]&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// 集群模式下请删除此行</span>
-<span class="p">.</span><span class="n">appName</span><span class="p">(</span><span class="s">&quot;Sedona Viz&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// 改成合适的名字</span>
+<span class="p">.</span><span class="n">master</span><span class="p">(</span><span class="s">"local[*]"</span><span class="p">)</span><span class="w"> </span><span class="c1">// 集群模式下请删除此行</span>
+<span class="p">.</span><span class="n">appName</span><span class="p">(</span><span class="s">"Sedona Viz"</span><span class="p">)</span><span class="w"> </span><span class="c1">// 改成合适的名字</span>
 <span class="c1">// 启用 Sedona 自定义 Kryo 序列化器</span>
-<span class="p">.</span><span class="n">config</span><span class="p">(</span><span class="s">&quot;spark.serializer&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">classOf</span><span class="p">[</span><span class="nc">KryoSerializer</span><span class="p">].</span><span class="n">getName</span><span class="p">)</span><span class="w"> </span><span class="c1">// org.apache.spark.serializer.KryoSerializer</span>
-<span class="p">.</span><span class="n">config</span><span class="p">(</span><span class="s">&quot;spark.kryo.registrator&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">classOf</span><span class="p">[</span><span class="nc">SedonaVizKryoRegistrator</span><span class="p">].</span><span class="n">getName</span><span class="p">)</span><span class="w"> </span><span class="c1">// org.apache.sedona.viz.core.Serde.SedonaVizKryoRegistrator</span>
+<span class="p">.</span><span class="n">config</span><span class="p">(</span><span class="s">"spark.serializer"</span><span class="p">,</span><span class="w"> </span><span class="k">classOf</span><span class="p">[</span><span class="nc">KryoSerializer</span><span class="p">].</span><span class="n">getName</span><span class="p">)</span><span class="w"> </span><span class="c1">// org.apache.spark.serializer.KryoSerializer</span>
+<span class="p">.</span><span class="n">config</span><span class="p">(</span><span class="s">"spark.kryo.registrator"</span><span class="p">,</span><span class="w"> </span><span class="k">classOf</span><span class="p">[</span><span class="nc">SedonaVizKryoRegistrator</span><span class="p">].</span><span class="n">getName</span><span class="p">)</span><span class="w"> </span><span class="c1">// org.apache.sedona.viz.core.Serde.SedonaVizKryoRegistrator</span>
 <span class="p">.</span><span class="n">getOrCreate</span><span class="p">()</span>
 </code></pre></div>
 <h2 id="sedonacontext">初始化 SedonaContext<a class="headerlink" href="#sedonacontext" title="Permanent link">&para;</a></h2>
@@ -6041,12 +6153,12 @@
 <p>下面这段代码适用于 Sedona v1.0.1 之前。<code>ST_Pixelize</code> 继承自 Generator，因此可以直接展开数组而无需 <strong>explode</strong> 函数。</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="k">REPLACE</span><span class="w"> </span><span class="n">TEMP</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">pixels</span><span class="w"> </span><span class="k">AS</span>
 <span class="k">SELECT</span><span class="w"> </span><span class="n">pixel</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pointtable</span>
-<span class="k">LATERAL</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">ST_Pixelize</span><span class="p">(</span><span class="n">ST_Transform</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;epsg:4326&#39;</span><span class="p">,</span><span class="s1">&#39;epsg:3857&#39;</span><span class="p">),</span><span class="w"> </span><span class="mi">256</span><span class="p">,</span><span class="w"> </span><span class="mi">256</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">ST_Transform</span><span class="p">(</span><span class="n">bound</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;epsg:4326&#39;</span><span class="p">,</span><span class="s1">&#39;epsg:3857&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">boundtable</span><span class="p">))</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">pixel</span>
+<span class="k">LATERAL</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">ST_Pixelize</span><span class="p">(</span><span class="n">ST_Transform</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span><span class="w"> </span><span class="s1">'epsg:4326'</span><span class="p">,</span><span class="s1">'epsg:3857'</span><span class="p">),</span><span class="w"> </span><span class="mi">256</span><span class="p">,</span><span class="w"> </span><span class="mi">256</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">ST_Transform</span><span class="p">(</span><span class="n">bound</span><span class="p">,</span><span class="w"> </span><span class="s1">'epsg:4326'</span><span class="p">,</span><span class="s1">'epsg:3857'</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">boundtable</span><span class="p">))</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">pixel</span>
 </code></pre></div>
 <p>下面这段代码适用于 Sedona v1.0.1 及之后。<code>ST_Pixelize</code> 返回像素数组，需要使用 <strong>explode</strong> 展开：</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="k">REPLACE</span><span class="w"> </span><span class="n">TEMP</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">pixels</span><span class="w"> </span><span class="k">AS</span>
 <span class="k">SELECT</span><span class="w"> </span><span class="n">pixel</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pointtable</span>
-<span class="k">LATERAL</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">explode</span><span class="p">(</span><span class="n">ST_Pixelize</span><span class="p">(</span><span class="n">ST_Transform</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;epsg:4326&#39;</span><span class="p">,</span><span class="s1">&#39;epsg:3857&#39;</span><span class="p">),</span><span class="w"> </span><span class="mi">256</span><span class="p">,</span><span class="w"> </span><span class="mi">256</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">ST_Transform</span><span class="p">(</span><span class="n">bound</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;epsg:4326&#39;</span><span class="p">,</span><span class="s1">&#39;epsg:3857&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">boundtable</span><span class="p">)))</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">pixel</span>
+<span class="k">LATERAL</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">explode</span><span class="p">(</span><span class="n">ST_Pixelize</span><span class="p">(</span><span class="n">ST_Transform</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span><span class="w"> </span><span class="s1">'epsg:4326'</span><span class="p">,</span><span class="s1">'epsg:3857'</span><span class="p">),</span><span class="w"> </span><span class="mi">256</span><span class="p">,</span><span class="w"> </span><span class="mi">256</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">ST_Transform</span><span class="p">(</span><span class="n">bound</span><span class="p">,</span><span class="w"> </span><span class="s1">'epsg:4326'</span><span class="p">,</span><span class="s1">'epsg:3857'</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">boundtable</span><span class="p">)))</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">pixel</span>
 </code></pre></div>
 <p>执行完本教程末尾的 <code>ST_Render</code> 后，将得到 256*256 分辨率的图像。</p>
 <div class="admonition warning">
@@ -6077,11 +6189,11 @@
 <p>该 DataFrame 中将包含一列 Image 类型的列，且只有一张图像。</p>
 <h3 id="_8">将图像保存到磁盘<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>从上面的 DataFrame 中取出图像：</p>
-<div class="highlight"><pre><span></span><code>var image = sedona.table(&quot;images&quot;).take(1)(0)(0).asInstanceOf[ImageSerializableWrapper].getImage
+<div class="highlight"><pre><span></span><code>var image = sedona.table("images").take(1)(0)(0).asInstanceOf[ImageSerializableWrapper].getImage
 </code></pre></div>
 <p>使用 Sedona Viz 的 <code>ImageGenerator</code> 把图像保存到磁盘：</p>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="n">imageGenerator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nc">ImageGenerator</span>
-<span class="n">imageGenerator</span><span class="p">.</span><span class="nc">SaveRasterImageAsLocalFile</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="w"> </span><span class="nc">System</span><span class="p">.</span><span class="n">getProperty</span><span class="p">(</span><span class="s">&quot;user.dir&quot;</span><span class="p">)</span><span class="o">+</span><span class="s">&quot;/target/points&quot;</span><span class="p">,</span><span class="w"> </span><span class="nc">ImageType</span><span class="p">.</span><span class="nc">PNG</span><span class="p">)</span>
+<span class="n">imageGenerator</span><span class="p">.</span><span class="nc">SaveRasterImageAsLocalFile</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="w"> </span><span class="nc">System</span><span class="p">.</span><span class="n">getProperty</span><span class="p">(</span><span class="s">"user.dir"</span><span class="p">)</span><span class="o">+</span><span class="s">"/target/points"</span><span class="p">,</span><span class="w"> </span><span class="nc">ImageType</span><span class="p">.</span><span class="nc">PNG</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="_9">生成地图瓦片<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <p>如果您是地图相关从业者，可能需要为不同缩放级别生成地图瓦片，最终构建出地图瓦片图层。</p>
@@ -6247,7 +6359,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["announce.dismiss", "content.code.copy", "content.action.edit", "search.highlight", "search.share", "search.suggest", "navigation.footer", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.tabs.sticky", "navigation.top"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"default": ["latest"], "provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../assets/javascripts/main.min.js"></script>
       

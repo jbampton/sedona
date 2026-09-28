@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -35,7 +35,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -111,7 +111,7 @@
       </div>
     
     <div style="background: #CA463A; color: white; text-align: center; padding: 0.5rem;">
-    <a href="../../../../setup/release-notes/" title="Announcement">Apache Sedona 1.9.0 已正式发布，新增 Spark 4.1 支持、proj4sedona 坐标系转换、Bing Tile 函数等众多特性！</a>
+        <a href="../../../../setup/release-notes/" title="Announcement">🎉 Apache Sedona 1.9.1 已正式发布！🗺️ 新增 Geography SQL 函数、Box2D 与 Box3D 类型、栅格 Python UDF 等。查看发布说明 →</a>
   </div>
   
       <!--
@@ -1772,6 +1772,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../files/netcdfmetadata-sedona-spark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NetCDF metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../files/stac-sedona-spark/" class="md-nav__link">
         
   
@@ -3065,6 +3093,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../api/sql/Raster-UDF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    栅格 UDF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../api/sql/Raster-affine-transformation/" class="md-nav__link">
         
   
@@ -3431,6 +3487,34 @@
     
   
     Sedona R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/geopandas-coverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GeoPandas API 覆盖情况
   
 
     
@@ -4192,6 +4276,34 @@
     
   
     几何函数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/flink/Geography-Functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    地理函数
   
 
     
@@ -5738,12 +5850,12 @@
         <span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">Point</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">)),</span>
         <span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">Point</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
     <span class="p">],</span>
-    <span class="p">[</span><span class="s2">&quot;start&quot;</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">"start"</span><span class="p">,</span> <span class="s2">"end"</span><span class="p">],</span>
 <span class="p">)</span>
 </code></pre></div>
 <p><code>start</code> 与 <code>end</code> 列均为 <code>geometry</code> 类型。</p>
 <p>使用 <code>ST_Distance</code> 函数计算两点之间的距离：</p>
-<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;distance&quot;</span><span class="p">,</span> <span class="n">ST_Distance</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;start&quot;</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;end&quot;</span><span class="p">)))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">"distance"</span><span class="p">,</span> <span class="n">ST_Distance</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"start"</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">"end"</span><span class="p">)))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
 <p>结果如下：</p>
 <div class="highlight"><pre><span></span><code>+-----------+-----------+-----------------+
@@ -5764,12 +5876,12 @@
         <span class="p">(</span><span class="n">seattle</span><span class="p">,</span> <span class="n">new_york</span><span class="p">),</span>
         <span class="p">(</span><span class="n">seattle</span><span class="p">,</span> <span class="n">sydney</span><span class="p">),</span>
     <span class="p">],</span>
-    <span class="p">[</span><span class="s2">&quot;place1&quot;</span><span class="p">,</span> <span class="s2">&quot;place2&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">"place1"</span><span class="p">,</span> <span class="s2">"place2"</span><span class="p">],</span>
 <span class="p">)</span>
 </code></pre></div>
 <p>计算这些点之间的距离：</p>
 <div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span>
-    <span class="s2">&quot;st_distance_sphere&quot;</span><span class="p">,</span> <span class="n">ST_DistanceSphere</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;place1&quot;</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;place2&quot;</span><span class="p">))</span>
+    <span class="s2">"st_distance_sphere"</span><span class="p">,</span> <span class="n">ST_DistanceSphere</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"place1"</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">"place2"</span><span class="p">))</span>
 <span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
 <p>结果如下：</p>
@@ -5785,9 +5897,9 @@
 <h2 id="spark-sedona_2">使用 Spark 与 Sedona 在椭球模型上计算两点距离<a class="headerlink" href="#spark-sedona_2" title="Permanent link">&para;</a></h2>
 <p>复用前一节的 DataFrame，但改用椭球模型：</p>
 <div class="highlight"><pre><span></span><code><span class="n">res</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span>
-    <span class="s2">&quot;st_distance_spheroid&quot;</span><span class="p">,</span> <span class="n">ST_DistanceSpheroid</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;place1&quot;</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;place2&quot;</span><span class="p">))</span>
+    <span class="s2">"st_distance_spheroid"</span><span class="p">,</span> <span class="n">ST_DistanceSpheroid</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"place1"</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">"place2"</span><span class="p">))</span>
 <span class="p">)</span>
-<span class="n">res</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;place1_name&quot;</span><span class="p">,</span> <span class="s2">&quot;place2_name&quot;</span><span class="p">,</span> <span class="s2">&quot;st_distance_spheroid&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">res</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">"place1_name"</span><span class="p">,</span> <span class="s2">"place2_name"</span><span class="p">,</span> <span class="s2">"st_distance_spheroid"</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
 <p>结果如下：</p>
 <div class="highlight"><pre><span></span><code>+-----------+-----------+--------------------+
@@ -5803,7 +5915,7 @@
 <p><img alt="对象之间的距离" src="../../../../image/tutorial/concepts/distance2.png" /></p>
 <p>两个多边形之间的距离定义为它们之间任意两点的最小欧氏距离。</p>
 <p>计算距离：</p>
-<div class="highlight"><pre><span></span><code><span class="n">res</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;distance&quot;</span><span class="p">,</span> <span class="n">ST_Distance</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;geom1&quot;</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;geom2&quot;</span><span class="p">)))</span>
+<div class="highlight"><pre><span></span><code><span class="n">res</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">"distance"</span><span class="p">,</span> <span class="n">ST_Distance</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"geom1"</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">"geom2"</span><span class="p">)))</span>
 </code></pre></div>
 <p>结果如下：</p>
 <div class="highlight"><pre><span></span><code>+---+---+--------+
@@ -5823,12 +5935,12 @@
     <span class="p">[</span>
         <span class="p">(</span><span class="n">empire_state_ground</span><span class="p">,</span> <span class="n">empire_state_top</span><span class="p">),</span>
     <span class="p">],</span>
-    <span class="p">[</span><span class="s2">&quot;point_a&quot;</span><span class="p">,</span> <span class="s2">&quot;point_b&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">"point_a"</span><span class="p">,</span> <span class="s2">"point_b"</span><span class="p">],</span>
 <span class="p">)</span>
 </code></pre></div>
 <p>分别计算 2D 与 3D 距离：</p>
-<div class="highlight"><pre><span></span><code><span class="n">res</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;distance&quot;</span><span class="p">,</span> <span class="n">ST_Distance</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;point_a&quot;</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;point_b&quot;</span><span class="p">)))</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span>
-    <span class="s2">&quot;3d_distance&quot;</span><span class="p">,</span> <span class="n">ST_3DDistance</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;point_a&quot;</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;point_b&quot;</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><span class="n">res</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">"distance"</span><span class="p">,</span> <span class="n">ST_Distance</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"point_a"</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">"point_b"</span><span class="p">)))</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span>
+    <span class="s2">"3d_distance"</span><span class="p">,</span> <span class="n">ST_3DDistance</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"point_a"</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">"point_b"</span><span class="p">))</span>
 <span class="p">)</span>
 </code></pre></div>
 <p>结果如下：</p>
@@ -5847,19 +5959,19 @@
 <span class="n">c</span> <span class="o">=</span> <span class="n">LineString</span><span class="p">([(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">)])</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">sedona</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span>
     <span class="p">[</span>
-        <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">),</span>
-        <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">),</span>
+        <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">),</span>
     <span class="p">],</span>
-    <span class="p">[</span><span class="s2">&quot;geometry1&quot;</span><span class="p">,</span> <span class="s2">&quot;geometry1_id&quot;</span><span class="p">,</span> <span class="s2">&quot;geometry2&quot;</span><span class="p">,</span> <span class="s2">&quot;geometry2_id&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">"geometry1"</span><span class="p">,</span> <span class="s2">"geometry1_id"</span><span class="p">,</span> <span class="s2">"geometry2"</span><span class="p">,</span> <span class="s2">"geometry2_id"</span><span class="p">],</span>
 <span class="p">)</span>
 </code></pre></div>
 <p>计算 Frechet 距离：</p>
 <div class="highlight"><pre><span></span><code><span class="n">res</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span>
-    <span class="s2">&quot;frechet_distance&quot;</span><span class="p">,</span> <span class="n">ST_FrechetDistance</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;geometry1&quot;</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;geometry2&quot;</span><span class="p">))</span>
+    <span class="s2">"frechet_distance"</span><span class="p">,</span> <span class="n">ST_FrechetDistance</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"geometry1"</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">"geometry2"</span><span class="p">))</span>
 <span class="p">)</span>
 </code></pre></div>
 <p>查看结果：</p>
-<div class="highlight"><pre><span></span><code><span class="n">res</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;geometry1_id&quot;</span><span class="p">,</span> <span class="s2">&quot;geometry2_id&quot;</span><span class="p">,</span> <span class="s2">&quot;frechet_distance&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="n">res</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">"geometry1_id"</span><span class="p">,</span> <span class="s2">"geometry2_id"</span><span class="p">,</span> <span class="s2">"frechet_distance"</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>+------------+------------+----------------+
 |geometry1_id|geometry2_id|frechet_distance|
@@ -5874,10 +5986,10 @@
 <p>假设有以下几何对象：</p>
 <p><img alt="几何对象之间的距离" src="../../../../image/tutorial/concepts/distance5.png" /></p>
 <p>计算其中一些几何对象之间的最大距离：</p>
-<div class="highlight"><pre><span></span><code><span class="n">res</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;max_distance&quot;</span><span class="p">,</span> <span class="n">ST_MaxDistance</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;geom1&quot;</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;geom2&quot;</span><span class="p">)))</span>
+<div class="highlight"><pre><span></span><code><span class="n">res</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">"max_distance"</span><span class="p">,</span> <span class="n">ST_MaxDistance</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"geom1"</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">"geom2"</span><span class="p">)))</span>
 </code></pre></div>
 <p>查看结果：</p>
-<div class="highlight"><pre><span></span><code><span class="n">res</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;id1&quot;</span><span class="p">,</span> <span class="s2">&quot;id2&quot;</span><span class="p">,</span> <span class="s2">&quot;max_distance&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">truncate</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">res</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">"id1"</span><span class="p">,</span> <span class="s2">"id2"</span><span class="p">,</span> <span class="s2">"max_distance"</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">truncate</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>+---+---+-----------------+
 |id1|id2|max_distance     |
@@ -6031,7 +6143,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["announce.dismiss", "content.code.copy", "content.action.edit", "search.highlight", "search.share", "search.suggest", "navigation.footer", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.tabs.sticky", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"default": ["latest"], "provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../../assets/javascripts/main.min.js"></script>
       

@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../../../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -35,7 +35,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -111,7 +111,7 @@
       </div>
     
     <div style="background: #CA463A; color: white; text-align: center; padding: 0.5rem;">
-    <a href="../../../../../../setup/release-notes/" title="Announcement">Apache Sedona 1.9.0 已正式发布，新增 Spark 4.1 支持、proj4sedona 坐标系转换、Bing Tile 函数等众多特性！</a>
+        <a href="../../../../../../setup/release-notes/" title="Announcement">🎉 Apache Sedona 1.9.1 已正式发布！🗺️ 新增 Geography SQL 函数、Box2D 与 Box3D 类型、栅格 Python UDF 等。查看发布说明 →</a>
   </div>
   
       <!--
@@ -1767,6 +1767,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../../tutorial/files/netcdfmetadata-sedona-spark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NetCDF metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../../tutorial/files/stac-sedona-spark/" class="md-nav__link">
         
   
@@ -2923,6 +2951,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../../api/sql/Raster-UDF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    栅格 UDF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../../api/sql/Raster-affine-transformation/" class="md-nav__link">
         
   
@@ -3289,6 +3345,34 @@
     
   
     Sedona R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../api/geopandas-coverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GeoPandas API 覆盖情况
   
 
     
@@ -4050,6 +4134,34 @@
     
   
     几何函数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../api/flink/Geography-Functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    地理函数
   
 
     
@@ -5600,7 +5712,7 @@
                     <span class="md-profile__description">
                       <strong>
                         
-                          Matthew Forrest
+                          <a href="../../../../../../blog/author/matt_forrest/">Matthew Forrest</a>
                         
                       </strong>
                       <br>
@@ -5794,7 +5906,7 @@
 
 <span class="n">resolution</span> <span class="o">=</span> <span class="mi">8</span>
 <span class="n">h3</span><span class="o">.</span><span class="n">latlng_to_cell</span><span class="p">(</span><span class="mf">40.6892524</span><span class="p">,</span> <span class="o">-</span><span class="mf">74.044552</span><span class="p">,</span> <span class="n">resolution</span><span class="p">)</span>
-<span class="s2">&quot;882a1072b5fffff&quot;</span>
+<span class="s2">"882a1072b5fffff"</span>
 </code></pre></div>
 <p>Each cell is surrounded by exactly 6 other cells and a group of approximately seven cells at one resolution roughly corresponds to a single larger 'parent' cell in the next coarser resolution. This nesting isn't perfect, as child cells can slightly cross parent boundaries. (see below):</p>
 <p><img align="center" alt="Image showing H3 nested grid cells over San Francisco" src="../../../../../../image/blog/h3/image5.png" width="80%" /></p>
@@ -5862,17 +5974,17 @@
         <span class="p">(</span><span class="n">empire_state_building</span><span class="p">,</span> <span class="n">freedom_tower</span><span class="p">),</span>
         <span class="p">(</span><span class="n">empire_state_building</span><span class="p">,</span> <span class="n">willis_tower</span><span class="p">),</span>
     <span class="p">],</span>
-    <span class="p">[</span><span class="s2">&quot;start&quot;</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">"start"</span><span class="p">,</span> <span class="s2">"end"</span><span class="p">],</span>
 <span class="p">)</span>
 </code></pre></div>
 <p>Let's see how to compute the distance sphere between the start and end points and the H3 cell distance.</p>
 <div class="highlight"><pre><span></span><code><span class="n">res</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;st_distance_sphere&quot;</span><span class="p">,</span> <span class="n">ST_DistanceSphere</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;start&quot;</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;end&quot;</span><span class="p">)))</span>
-    <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;start_cellid&quot;</span><span class="p">,</span> <span class="n">ST_H3CellIDs</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;start&quot;</span><span class="p">),</span> <span class="mi">6</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
-    <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;end_cellid&quot;</span><span class="p">,</span> <span class="n">ST_H3CellIDs</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;end&quot;</span><span class="p">),</span> <span class="mi">6</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">"st_distance_sphere"</span><span class="p">,</span> <span class="n">ST_DistanceSphere</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"start"</span><span class="p">),</span> <span class="n">col</span><span class="p">(</span><span class="s2">"end"</span><span class="p">)))</span>
+    <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">"start_cellid"</span><span class="p">,</span> <span class="n">ST_H3CellIDs</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"start"</span><span class="p">),</span> <span class="mi">6</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
+    <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">"end_cellid"</span><span class="p">,</span> <span class="n">ST_H3CellIDs</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"end"</span><span class="p">),</span> <span class="mi">6</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
     <span class="o">.</span><span class="n">withColumn</span><span class="p">(</span>
-        <span class="s2">&quot;h3_cell_distance&quot;</span><span class="p">,</span>
-        <span class="n">ST_H3CellDistance</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;start_cellid&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">col</span><span class="p">(</span><span class="s2">&quot;end_cellid&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]),</span>
+        <span class="s2">"h3_cell_distance"</span><span class="p">,</span>
+        <span class="n">ST_H3CellDistance</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">"start_cellid"</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">col</span><span class="p">(</span><span class="s2">"end_cellid"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]),</span>
     <span class="p">)</span>
 <span class="p">)</span>
 </code></pre></div>
@@ -5882,7 +5994,7 @@
 <li>The <code>ST_H3CellDistance</code> returns an integer representing the number of steps (hexagons) between the two H3 cells on the H3 grid.</li>
 </ul>
 <p>Let's take a look at the resulting DataFrame:</p>
-<div class="highlight"><pre><span></span><code><span class="n">res</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;st_distance_sphere&quot;</span><span class="p">,</span> <span class="s2">&quot;h3_cell_distance&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="n">res</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">"st_distance_sphere"</span><span class="p">,</span> <span class="s2">"h3_cell_distance"</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>+------------------+----------------+
 |st_distance_sphere|h3_cell_distance|
@@ -5905,11 +6017,11 @@
 <p>As many of the geometries in this data set are particularly complex and have a high level of accuracy as many different decisions, from building permits to flood insurance, are-based off of this data, it provides a good use case for us to explore. We will limit the test to this specific flood zone polygon:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Pull the single area to show on the map</span>
 
-<span class="n">area</span> <span class="o">=</span> <span class="n">sedona</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="n">area</span> <span class="o">=</span> <span class="n">sedona</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">"""</span>
 <span class="s2">select *</span>
 <span class="s2">from fema</span>
-<span class="s2">where FLD_AR_ID = &#39;48201C_9129&#39;</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="s2">where FLD_AR_ID = '48201C_9129'</span>
+<span class="s2">"""</span><span class="p">)</span>
 </code></pre></div>
 <p><img align="center" alt="Single FEMA Flood Plain polygon near Houston Texas" src="../../../../../../image/blog/h3/image6.png" width="80%" /></p>
 <p>As Sedona uses the integer-based cell identifier for H3, we will also create a user defined function to turn these into string-based H3 cells. This is because SedonaKepler accepts the strings in place of geometries, one of the main advantages of using H3.</p>
@@ -5928,7 +6040,7 @@
 <span class="c1"># Register the function as a Spark UDF</span>
 <span class="n">h3_int_to_str_udf</span> <span class="o">=</span> <span class="n">udf</span><span class="p">(</span><span class="n">h3_int_to_str</span><span class="p">,</span> <span class="n">StringType</span><span class="p">())</span>
 
-<span class="n">sedona</span><span class="o">.</span><span class="n">udf</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&quot;h3_int_to_str&quot;</span><span class="p">,</span> <span class="n">h3_int_to_str_udf</span><span class="p">)</span>
+<span class="n">sedona</span><span class="o">.</span><span class="n">udf</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">"h3_int_to_str"</span><span class="p">,</span> <span class="n">h3_int_to_str_udf</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="coverage-overlaps-with-h3-cells">Coverage overlaps with H3 cells<a class="headerlink" href="#coverage-overlaps-with-h3-cells" title="Permanent link">&para;</a></h2>
 <p>One of the major issues with H3 cells is that they don't evenly overlap polygons
@@ -5938,53 +6050,53 @@ when transforming a polygon to H3 cells. There are two methods for doing this:</
 <li>Fill: Will add a cell if the centroid of the cell falls within the polygon shape</li>
 </ul>
 <p>Here we can test that out for level 8 and the cover method:</p>
-<div class="highlight"><pre><span></span><code><span class="n">h3_cells_8</span> <span class="o">=</span> <span class="n">sedona</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;with a as (</span>
+<div class="highlight"><pre><span></span><code><span class="n">h3_cells_8</span> <span class="o">=</span> <span class="n">sedona</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">"""with a as (</span>
 <span class="s2">select</span>
 <span class="s2">explode(ST_H3CellIDs(geometry, 8, true)) as hex_id</span>
 <span class="s2">from fema</span>
-<span class="s2">where FLD_AR_ID = &#39;48201C_9129&#39;)</span>
+<span class="s2">where FLD_AR_ID = '48201C_9129')</span>
 
 <span class="s2">select h3_int_to_str(hex_id) as hex_id from a</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="s2">"""</span><span class="p">)</span>
 </code></pre></div>
 <p><img align="center" alt="H3 cells at level 8 overlapping a FEMA Flood plain polygon near Houston Texas" src="../../../../../../image/blog/h3/image3.png" width="80%" /></p>
 <p>As you can see there is a high amount of extra coverage at this level. Let's go down to level 12 to see how that compares for both the fill and the cover methods.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Test the same overlap but with H3 Size 12</span>
 
-<span class="n">h3_cells_12_cover</span> <span class="o">=</span> <span class="n">sedona</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;with a as (</span>
+<span class="n">h3_cells_12_cover</span> <span class="o">=</span> <span class="n">sedona</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">"""with a as (</span>
 <span class="s2">select</span>
 <span class="s2">explode(ST_H3CellIDs(geometry, 12, true)) as hex_id</span>
 <span class="s2">from fema</span>
-<span class="s2">where FLD_AR_ID = &#39;48201C_9129&#39;)</span>
+<span class="s2">where FLD_AR_ID = '48201C_9129')</span>
 <span class="s2">select h3_int_to_str(hex_id) as hex_id from a</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="s2">"""</span><span class="p">)</span>
 
-<span class="n">h3_cells_12_fill</span> <span class="o">=</span> <span class="n">sedona</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;with a as (</span>
+<span class="n">h3_cells_12_fill</span> <span class="o">=</span> <span class="n">sedona</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">"""with a as (</span>
 <span class="s2">select</span>
 <span class="s2">explode(ST_H3CellIDs(geometry, 12, false)) as hex_id</span>
 <span class="s2">from fema</span>
-<span class="s2">where FLD_AR_ID = &#39;48201C_9129&#39;)</span>
+<span class="s2">where FLD_AR_ID = '48201C_9129')</span>
 <span class="s2">select h3_int_to_str(hex_id) as hex_id from a</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="s2">"""</span><span class="p">)</span>
 </code></pre></div>
 <p><img alt="Animated GIF showing the differences between the original FEMA flood polygon, H3 cells at level 8 and level 12, and buildings that fall in each of the different areas" src="../../../../../../image/blog/h3/image4.gif" />
 You can see that this is a little closer to accurate coverage but there are still overlaps even with the fill method and areas that are uncovered.</p>
 <p>We can also calculate the coverage overlaps. First for the level 8 layer:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Find the excess coverage area for H3 coverage level 8</span>
 
-<span class="n">h3_cells_missing_8</span> <span class="o">=</span> <span class="n">sedona</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;with a as (</span>
+<span class="n">h3_cells_missing_8</span> <span class="o">=</span> <span class="n">sedona</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">"""with a as (</span>
 <span class="s2">select</span>
 <span class="s2">explode(ST_H3ToGeom(ST_H3CellIDs(geometry, 8, true))) as h3_geom</span>
 <span class="s2">from fema</span>
-<span class="s2">where FLD_AR_ID = &#39;48201C_9129&#39;)</span>
+<span class="s2">where FLD_AR_ID = '48201C_9129')</span>
 
 <span class="s2">select</span>
 <span class="s2">sum((st_area(st_intersection(fema.geometry, a.h3_geom))) / st_area(fema.geometry)) - 1 percent_missing</span>
 <span class="s2">from a</span>
 <span class="s2">join fema</span>
 <span class="s2">on st_intersects(h3_geom, geometry)</span>
-<span class="s2">where FLD_AR_ID = &#39;48201C_9129&#39;</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="s2">where FLD_AR_ID = '48201C_9129'</span>
+<span class="s2">"""</span><span class="p">)</span>
 
 <span class="n">h3_cells_missing_8</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
@@ -5998,19 +6110,19 @@ You can see that this is a little closer to accurate coverage but there are stil
 <p>We can do the same for the level 12 fill layer which is a bit better:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Find the percent of missing area with H3 coverage level 12</span>
 
-<span class="n">h3_cells_missing</span> <span class="o">=</span> <span class="n">sedona</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;with a as (</span>
+<span class="n">h3_cells_missing</span> <span class="o">=</span> <span class="n">sedona</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">"""with a as (</span>
 <span class="s2">select</span>
 <span class="s2">explode(ST_H3ToGeom(ST_H3CellIDs(geometry, 12, false))) as h3_geom</span>
 <span class="s2">from fema</span>
-<span class="s2">where FLD_AR_ID = &#39;48201C_9129&#39;)</span>
+<span class="s2">where FLD_AR_ID = '48201C_9129')</span>
 
 <span class="s2">select</span>
 <span class="s2">1 - sum((st_area(st_intersection(fema.geometry, a.h3_geom))) / st_area(fema.geometry)) percent_missing</span>
 <span class="s2">from a</span>
 <span class="s2">join fema</span>
 <span class="s2">on st_intersects(h3_geom, geometry)</span>
-<span class="s2">where FLD_AR_ID = &#39;48201C_9129&#39;</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="s2">where FLD_AR_ID = '48201C_9129'</span>
+<span class="s2">"""</span><span class="p">)</span>
 
 <span class="n">h3_cells_missing</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
@@ -6026,13 +6138,13 @@ You can see that this is a little closer to accurate coverage but there are stil
 <p>First let's look at a baseline joining the original geometry to the buildings:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Compare a spatial join at H3 level 8 with Overture Map Buildings</span>
 
-<span class="n">true_spatial_join</span> <span class="o">=</span> <span class="n">sedona</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="n">true_spatial_join</span> <span class="o">=</span> <span class="n">sedona</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">"""</span>
 <span class="s2">select count(overture.id) as buildings</span>
 <span class="s2">from overture.buildings_building overture</span>
 <span class="s2">join fema</span>
 <span class="s2">on st_intersects(fema.geometry, overture.geometry)</span>
-<span class="s2">where fema.FLD_AR_ID = &#39;48201C_9129&#39;</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="s2">where fema.FLD_AR_ID = '48201C_9129'</span>
+<span class="s2">"""</span><span class="p">)</span>
 
 <span class="n">true_spatial_join</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
@@ -6046,7 +6158,7 @@ You can see that this is a little closer to accurate coverage but there are stil
 <p>Let's test that with the level 8 H3 cells. Note that you must first transform the cells to geometries, then aggregate them into a single polygon using <code>ST_Union_Aggr</code> to avoid counting buildings more than one time.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Compare a spatial join at H3 level 8 with Overture Map Buildings</span>
 
-<span class="n">h3_cells_join_level_8</span> <span class="o">=</span> <span class="n">sedona</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;with a as (</span>
+<span class="n">h3_cells_join_level_8</span> <span class="o">=</span> <span class="n">sedona</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">"""with a as (</span>
 <span class="s2">select</span>
 <span class="s2">explode(</span>
 <span class="s2">ST_H3ToGeom(</span>
@@ -6054,7 +6166,7 @@ You can see that this is a little closer to accurate coverage but there are stil
 <span class="s2">)</span>
 <span class="s2">) as h3_geom</span>
 <span class="s2">from fema</span>
-<span class="s2">where FLD_AR_ID = &#39;48201C_9129&#39;),</span>
+<span class="s2">where FLD_AR_ID = '48201C_9129'),</span>
 
 <span class="s2">b as (</span>
 <span class="s2">select ST_Union_Aggr(h3_geom) as h3_geom from a</span>
@@ -6063,7 +6175,7 @@ You can see that this is a little closer to accurate coverage but there are stil
 <span class="s2">from overture.buildings_building overture</span>
 <span class="s2">join b</span>
 <span class="s2">on st_intersects(b.h3_geom, overture.geometry)</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="s2">"""</span><span class="p">)</span>
 
 <span class="n">h3_cells_join_level_8</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
@@ -6074,7 +6186,7 @@ You can see that this is a little closer to accurate coverage but there are stil
 +---------+
 </code></pre></div>
 <p>Far more than we would want in a real world analysis. Now let's try with our level 12 H3 cells using the fill methodology which has the least overlap.</p>
-<div class="highlight"><pre><span></span><code><span class="n">h3_cells_join_level_12</span> <span class="o">=</span> <span class="n">sedona</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;with a as (</span>
+<div class="highlight"><pre><span></span><code><span class="n">h3_cells_join_level_12</span> <span class="o">=</span> <span class="n">sedona</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">"""with a as (</span>
 <span class="s2">select</span>
 <span class="s2">explode(</span>
 <span class="s2">ST_H3ToGeom(</span>
@@ -6082,7 +6194,7 @@ You can see that this is a little closer to accurate coverage but there are stil
 <span class="s2">)</span>
 <span class="s2">) as h3_geom</span>
 <span class="s2">from fema</span>
-<span class="s2">where FLD_AR_ID = &#39;48201C_9129&#39;),</span>
+<span class="s2">where FLD_AR_ID = '48201C_9129'),</span>
 <span class="s2">b as (</span>
 <span class="s2">select ST_Union_Aggr(h3_geom) as h3_geom from a</span>
 <span class="s2">)</span>
@@ -6090,7 +6202,7 @@ You can see that this is a little closer to accurate coverage but there are stil
 <span class="s2">from overture.buildings_building overture</span>
 <span class="s2">join b</span>
 <span class="s2">on st_intersects(b.h3_geom, overture.geometry)</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="s2">"""</span><span class="p">)</span>
 
 <span class="n">h3_cells_join_level_12</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
@@ -6116,6 +6228,13 @@ computations, but it sacrifices precision and creates additional complexity.</p>
 <p>Apache Sedona is scalable and can run spatial computations exactly, which is easier.</p>
 <p>H3 is still a great option for certain types of spatial computations, but it's
 often easier to simply use the precise computations that are built-in to Apache Sedona.</p>
+<div class="admonition tip">
+<p class="admonition-title">Star Apache Sedona on GitHub</p>
+<p>A star takes two seconds and helps others discover the projects.</p>
+<p><a class="md-button md-button--primary" href="https://github.com/apache/sedona" rel="noopener" target="_blank">apache/sedona</a>
+<a class="md-button" href="https://github.com/apache/sedona-db" rel="noopener" target="_blank">apache/sedona-db</a>
+<a class="md-button" href="https://github.com/apache/sedona-spatialbench" rel="noopener" target="_blank">apache/sedona-spatialbench</a></p>
+</div>
 
 
 
@@ -6257,7 +6376,7 @@ often easier to simply use the precise computations that are built-in to Apache 
       <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../..", "features": ["announce.dismiss", "content.code.copy", "content.action.edit", "search.highlight", "search.share", "search.suggest", "navigation.footer", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.tabs.sticky", "navigation.top"], "search": "../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"default": ["latest"], "provider": "mike"}}</script>
     
     
-      <script src="../../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../../../../assets/javascripts/main.min.js"></script>
       

@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -35,7 +35,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -111,7 +111,7 @@
       </div>
     
     <div style="background: #CA463A; color: white; text-align: center; padding: 0.5rem;">
-    <a href="../../../../setup/release-notes/" title="Announcement">Apache Sedona 1.9.0 已正式发布，新增 Spark 4.1 支持、proj4sedona 坐标系转换、Bing Tile 函数等众多特性！</a>
+        <a href="../../../../setup/release-notes/" title="Announcement">🎉 Apache Sedona 1.9.1 已正式发布！🗺️ 新增 Geography SQL 函数、Box2D 与 Box3D 类型、栅格 Python UDF 等。查看发布说明 →</a>
   </div>
   
       <!--
@@ -1765,6 +1765,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../tutorial/files/netcdfmetadata-sedona-spark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NetCDF metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../tutorial/files/stac-sedona-spark/" class="md-nav__link">
         
   
@@ -2921,6 +2949,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../api/sql/Raster-UDF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    栅格 UDF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../api/sql/Raster-affine-transformation/" class="md-nav__link">
         
   
@@ -3287,6 +3343,34 @@
     
   
     Sedona R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/geopandas-coverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GeoPandas API 覆盖情况
   
 
     
@@ -4048,6 +4132,34 @@
     
   
     几何函数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/flink/Geography-Functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    地理函数
   
 
     
@@ -5717,8 +5829,8 @@
 <h2 id="2-sedona-jar-stage">步骤 2：将 Sedona 的 JAR 文件上传到 stage<a class="headerlink" href="#2-sedona-jar-stage" title="Permanent link">&para;</a></h2>
 <p>需要下载以下 2 个 JAR 文件：</p>
 <ul>
-<li>sedona-snowflake-1.9.0.jar：<a href="https://central.sonatype.com/artifact/org.apache.sedona/sedona-snowflake/versions">Sedona 在 Maven Central 的仓库</a></li>
-<li>geotools-wrapper-1.9.0-33.5.jar：<a href="https://central.sonatype.com/artifact/org.datasyslab/geotools-wrapper/versions">GeoTools-wrapper 在 Maven Central 的仓库</a></li>
+<li>sedona-snowflake-1.9.1.jar：<a href="https://central.sonatype.com/artifact/org.apache.sedona/sedona-snowflake/versions">Sedona 在 Maven Central 的仓库</a></li>
+<li>geotools-wrapper-1.9.1-33.5.jar：<a href="https://central.sonatype.com/artifact/org.datasyslab/geotools-wrapper/versions">GeoTools-wrapper 在 Maven Central 的仓库</a></li>
 </ul>
 <p>然后将这 2 个 JAR 文件上传到上一步创建的 stage 中。</p>
 <p>上传完成后，您应能在 stage 中看到这 2 个文件：</p>
@@ -5733,9 +5845,9 @@
 <p>如何创建 schema 可参阅 <a href="https://docs.snowflake.com/en/sql-reference/sql/create-schema.html">Snowflake 官方文档</a>。</p>
 <h2 id="4-sedona-sql">步骤 4：获取创建 Sedona 函数的 SQL 脚本<a class="headerlink" href="#4-sedona-sql" title="Permanent link">&para;</a></h2>
 <p>通过运行以下命令获取该 SQL 脚本：</p>
-<div class="highlight"><pre><span></span><code>java<span class="w"> </span>-jar<span class="w"> </span>sedona-snowflake-1.9.0.jar<span class="w"> </span>--geotools-version<span class="w"> </span><span class="m">1</span>.9.0-33.5<span class="w"> </span>&gt;<span class="w"> </span>sedona-snowflake.sql
+<div class="highlight"><pre><span></span><code>java<span class="w"> </span>-jar<span class="w"> </span>sedona-snowflake-1.9.1.jar<span class="w"> </span>--geotools-version<span class="w"> </span><span class="m">1</span>.9.1-33.5<span class="w"> </span>&gt;<span class="w"> </span>sedona-snowflake.sql
 </code></pre></div>
-<p>其中 sedona-snowflake-1.9.0.jar 即步骤 2 中下载的 JAR 文件。</p>
+<p>其中 sedona-snowflake-1.9.1.jar 即步骤 2 中下载的 JAR 文件。</p>
 <h2 id="5-sql-sedona">步骤 5：运行 SQL 脚本以创建 Sedona 的函数<a class="headerlink" href="#5-sql-sedona" title="Permanent link">&para;</a></h2>
 <p>我们在上一步的数据库下创建一个 worksheet，并运行该 SQL 脚本以创建 Sedona 的函数。</p>
 <p>这里我们选择 <code>Create Worksheet from SQL File</code> 选项。</p>
@@ -5892,7 +6004,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["announce.dismiss", "content.code.copy", "content.action.edit", "search.highlight", "search.share", "search.suggest", "navigation.footer", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.tabs.sticky", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"default": ["latest"], "provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../../assets/javascripts/main.min.js"></script>
       

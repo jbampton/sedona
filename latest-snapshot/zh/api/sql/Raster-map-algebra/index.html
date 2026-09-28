@@ -16,7 +16,7 @@
         <link rel="prev" href="../Raster-Functions/">
       
       
-        <link rel="next" href="../Raster-affine-transformation/">
+        <link rel="next" href="../Raster-UDF/">
       
       
         
@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -35,7 +35,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -111,7 +111,7 @@
       </div>
     
     <div style="background: #CA463A; color: white; text-align: center; padding: 0.5rem;">
-    <a href="../../../../setup/release-notes/" title="Announcement">Apache Sedona 1.9.0 已正式发布，新增 Spark 4.1 支持、proj4sedona 坐标系转换、Bing Tile 函数等众多特性！</a>
+        <a href="../../../../setup/release-notes/" title="Announcement">🎉 Apache Sedona 1.9.1 已正式发布！🗺️ 新增 Geography SQL 函数、Box2D 与 Box3D 类型、栅格 Python UDF 等。查看发布说明 →</a>
   </div>
   
       <!--
@@ -1770,6 +1770,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../tutorial/files/netcdfmetadata-sedona-spark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NetCDF metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../tutorial/files/stac-sedona-spark/" class="md-nav__link">
         
   
@@ -3025,6 +3053,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../Raster-UDF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    栅格 UDF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Raster-affine-transformation/" class="md-nav__link">
         
   
@@ -3391,6 +3447,34 @@
     
   
     Sedona R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geopandas-coverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GeoPandas API 覆盖情况
   
 
     
@@ -4152,6 +4236,34 @@
     
   
     几何函数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flink/Geography-Functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    地理函数
   
 
     
@@ -5648,6 +5760,13 @@
  -->
 
 <h2 id="map-algebra">地图代数（Map Algebra）<a class="headerlink" href="#map-algebra" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code>RS_MapAlgebra</code> 自 <code>v1.9.1</code> 起弃用，并将在**未来版本中移除**，请改用<a href="../Raster-UDF/">栅格 UDF</a>：它同样能
+完成这些逐像素计算，而且还能直接使用 NumPy、SciPy、scikit-learn 与 rasterio。该函数目前仍然可用，但已有
+脚本应尽早迁移。下面的 <a href="#ndvi">NDVI 示例</a>在栅格 UDF 页面上给出了两种写法的对照。</p>
+<p>本页介绍的基于数组的函数 —— <code>RS_BandAsArray</code>、<code>RS_Add</code>、<code>RS_NormalizedDifference</code> 等 —— 未被弃用。</p>
+</div>
 <p>地图代数是一种使用数学表达式来执行栅格计算的方法。表达式可以是简单的算术运算，也可以是多种运算的复杂组合。该表达式可以作用在单个栅格波段，也可以作用在多个栅格波段上。表达式的结果是一个新的栅格。</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -5678,7 +5797,7 @@
 <li><code>noDataValue</code>：（非可选）输出栅格的 nodata 值，允许传 <code>null</code>。</li>
 </ul>
 <p>双栅格输入的 <code>RS_MapAlgebra</code> 的 Spark SQL 示例：</p>
-<div class="highlight"><pre><span></span><code><span class="n">RS_MapAlgebra</span><span class="p">(</span><span class="n">rast0</span><span class="p">,</span><span class="w"> </span><span class="n">rast1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;D&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;out = rast0[0] * 0.5 + rast1[0] * 0.5;&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">RS_MapAlgebra</span><span class="p">(</span><span class="n">rast0</span><span class="p">,</span><span class="w"> </span><span class="n">rast1</span><span class="p">,</span><span class="w"> </span><span class="s1">'D'</span><span class="p">,</span><span class="w"> </span><span class="s1">'out = rast0[0] * 0.5 + rast1[0] * 0.5;'</span><span class="p">,</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
 </code></pre></div>
 <p><code>RS_MapAlgebra</code> 的性能也很不错，因为它由 <a href="https://github.com/geosolutions-it/jai-ext/wiki/Jiffle">Jiffle</a> 提供支持，可以被编译为 Java 字节码以
 执行。下面我们将演示如何用这两种方式实现常见的地图代数运算。</p>
@@ -5704,7 +5823,7 @@
 </code></pre></div>
 <p>其中 NIR 表示近红外波段，Red 表示红光波段。</p>
 <p>假设我们有若干个 4 波段的栅格，分别对应红、绿、蓝、近红外四个波段。我们希望为每个栅格计算 NDVI。可以使用 <code>RS_MapAlgebra</code> 函数来实现：</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">RS_MapAlgebra</span><span class="p">(</span><span class="n">rast</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;D&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;out = (rast[3] - rast[0]) / (rast[3] + rast[0]);&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">ndvi</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">raster_table</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">RS_MapAlgebra</span><span class="p">(</span><span class="n">rast</span><span class="p">,</span><span class="w"> </span><span class="s1">'D'</span><span class="p">,</span><span class="w"> </span><span class="s1">'out = (rast[3] - rast[0]) / (rast[3] + rast[0]);'</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">ndvi</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">raster_table</span>
 </code></pre></div>
 <p>这里的 Jiffle 脚本是 <code>out = (rast[3] - rast[0]) / (rast[3] + rast[0]);</code>。<code>rast</code> 变量始终绑定到输入栅格，
 而 <code>out</code> 变量绑定到输出栅格。Jiffle 会迭代输入栅格的每个像素，并为每个像素执行该脚本。<code>rast[3]</code> 与 <code>rast[0]</code>
@@ -5725,7 +5844,7 @@
 </code></pre></div>
 <p>使用 <code>RS_MapAlgebra</code> 可以很容易地实现 AWEI：</p>
 <div class="highlight"><pre><span></span><code><span class="c1">-- Assume that the raster includes all 13 Sentinel-2 bands</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">RS_MapAlgebra</span><span class="p">(</span><span class="n">rast</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;D&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;out = 4 * (rast[2] - rast[11]) - (0.25 * rast[7] + 2.75 * rast[12]);&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">awei</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">raster_table</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">RS_MapAlgebra</span><span class="p">(</span><span class="n">rast</span><span class="p">,</span><span class="w"> </span><span class="s1">'D'</span><span class="p">,</span><span class="w"> </span><span class="s1">'out = 4 * (rast[2] - rast[11]) - (0.25 * rast[7] + 2.75 * rast[12]);'</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">awei</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">raster_table</span>
 </code></pre></div>
 <p>也可以使用基于数组的地图代数函数实现同样的 AWEI 计算，代码看起来更冗长：</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">RS_Subtract</span><span class="p">(</span>
@@ -5741,6 +5860,7 @@
 <h3 id="_1">延伸阅读<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://github.com/geosolutions-it/jai-ext/wiki/Jiffle---language-summary">Jiffle language summary</a></li>
+<li><a href="../Raster-UDF/">栅格 UDF</a> —— 用 Python、NumPy 与 rasterio 实现同样的运算</li>
 <li><a href="../Raster-Functions/#raster-operators">Raster operators</a></li>
 </ul>
 
@@ -5763,7 +5883,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年5月11日 04:13:31 UTC">2026年5月11日 04:13:31</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年7月30日 20:24:40 UTC">2026年7月30日 20:24:40</span>
   </span>
 
     
@@ -5884,7 +6004,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["announce.dismiss", "content.code.copy", "content.action.edit", "search.highlight", "search.share", "search.suggest", "navigation.footer", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.tabs.sticky", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"default": ["latest"], "provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../../assets/javascripts/main.min.js"></script>
       

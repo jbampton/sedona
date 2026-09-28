@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -35,7 +35,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -111,7 +111,7 @@
       </div>
     
     <div style="background: #CA463A; color: white; text-align: center; padding: 0.5rem;">
-    <a href="../../setup/release-notes/" title="Announcement">Apache Sedona 1.9.0 is out now, featuring Spark 4.1 support, proj4sedona CRS transformation, Bing Tile functions, and more!</a>
+        <a href="../../setup/release-notes/" title="Announcement">🎉 Apache Sedona 1.9.1 is out now! 🗺️ Geography SQL functions, Box2D & Box3D types, raster Python UDFs & more. Read the release notes →</a>
   </div>
   
       <!--
@@ -2092,6 +2092,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../files/netcdfmetadata-sedona-spark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NetCDF metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../files/stac-sedona-spark/" class="md-nav__link">
         
   
@@ -3248,6 +3276,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../api/sql/Raster-UDF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raster UDFs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../api/sql/Raster-affine-transformation/" class="md-nav__link">
         
   
@@ -3614,6 +3670,34 @@
     
   
     Sedona R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/geopandas-coverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GeoPandas API coverage
   
 
     
@@ -4375,6 +4459,34 @@
     
   
     Geometry Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/flink/Geography-Functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geography Functions
   
 
     
@@ -6109,17 +6221,17 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Scala</label><label for="__tabbed_1_2">Java</label><label for="__tabbed_1_3">Python</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="n">spatialRDD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">StructuredAdapter</span><span class="p">.</span><span class="n">toSpatialRdd</span><span class="p">(</span><span class="n">spatialDf</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;usacounty&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="n">spatialRDD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">StructuredAdapter</span><span class="p">.</span><span class="n">toSpatialRdd</span><span class="p">(</span><span class="n">spatialDf</span><span class="p">,</span><span class="w"> </span><span class="s">"usacounty"</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="n">SpatialRDD</span><span class="w"> </span><span class="n">spatialRDD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StructuredAdapter</span><span class="p">.</span><span class="na">toSpatialRdd</span><span class="p">(</span><span class="n">spatialDf</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;usacounty&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">SpatialRDD</span><span class="w"> </span><span class="n">spatialRDD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StructuredAdapter</span><span class="p">.</span><span class="na">toSpatialRdd</span><span class="p">(</span><span class="n">spatialDf</span><span class="p">,</span><span class="w"> </span><span class="s">"usacounty"</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sedona.spark</span><span class="w"> </span><span class="kn">import</span> <span class="n">StructuredAdapter</span>
 
-<span class="n">spatialRDD</span> <span class="o">=</span> <span class="n">StructuredAdapter</span><span class="o">.</span><span class="n">toSpatialRdd</span><span class="p">(</span><span class="n">spatialDf</span><span class="p">,</span> <span class="s2">&quot;usacounty&quot;</span><span class="p">)</span>
+<span class="n">spatialRDD</span> <span class="o">=</span> <span class="n">StructuredAdapter</span><span class="o">.</span><span class="n">toSpatialRdd</span><span class="p">(</span><span class="n">spatialDf</span><span class="p">,</span> <span class="s2">"usacounty"</span><span class="p">)</span>
 </code></pre></div>
 </div>
 </div>
@@ -6132,20 +6244,20 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Scala</label><label for="__tabbed_2_2">Java</label><label for="__tabbed_2_3">Python</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="n">sourceCrsCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;epsg:4326&quot;</span><span class="w"> </span><span class="c1">// WGS84, the most common degree-based CRS</span>
-<span class="kd">val</span><span class="w"> </span><span class="n">targetCrsCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;epsg:3857&quot;</span><span class="w"> </span><span class="c1">// The most common meter-based CRS</span>
+<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="n">sourceCrsCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"epsg:4326"</span><span class="w"> </span><span class="c1">// WGS84, the most common degree-based CRS</span>
+<span class="kd">val</span><span class="w"> </span><span class="n">targetCrsCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"epsg:3857"</span><span class="w"> </span><span class="c1">// The most common meter-based CRS</span>
 <span class="n">objectRDD</span><span class="p">.</span><span class="nc">CRSTransform</span><span class="p">(</span><span class="n">sourceCrsCode</span><span class="p">,</span><span class="w"> </span><span class="n">targetCrsCode</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">sourceCrsCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;epsg:4326&quot;</span><span class="w"> </span><span class="c1">// WGS84, the most common degree-based CRS</span>
-<span class="n">String</span><span class="w"> </span><span class="n">targetCrsCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;epsg:3857&quot;</span><span class="w"> </span><span class="c1">// The most common meter-based CRS</span>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">sourceCrsCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"epsg:4326"</span><span class="w"> </span><span class="c1">// WGS84, the most common degree-based CRS</span>
+<span class="n">String</span><span class="w"> </span><span class="n">targetCrsCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"epsg:3857"</span><span class="w"> </span><span class="c1">// The most common meter-based CRS</span>
 <span class="n">objectRDD</span><span class="p">.</span><span class="na">CRSTransform</span><span class="p">(</span><span class="n">sourceCrsCode</span><span class="p">,</span><span class="w"> </span><span class="n">targetCrsCode</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="n">sourceCrsCode</span> <span class="o">=</span> <span class="s2">&quot;epsg:4326&quot;</span> <span class="o">//</span> <span class="n">WGS84</span><span class="p">,</span> <span class="n">the</span> <span class="n">most</span> <span class="n">common</span> <span class="n">degree</span><span class="o">-</span><span class="n">based</span> <span class="n">CRS</span>
-<span class="n">targetCrsCode</span> <span class="o">=</span> <span class="s2">&quot;epsg:3857&quot;</span> <span class="o">//</span> <span class="n">The</span> <span class="n">most</span> <span class="n">common</span> <span class="n">meter</span><span class="o">-</span><span class="n">based</span> <span class="n">CRS</span>
+<div class="highlight"><pre><span></span><code><span class="n">sourceCrsCode</span> <span class="o">=</span> <span class="s2">"epsg:4326"</span> <span class="o">//</span> <span class="n">WGS84</span><span class="p">,</span> <span class="n">the</span> <span class="n">most</span> <span class="n">common</span> <span class="n">degree</span><span class="o">-</span><span class="n">based</span> <span class="n">CRS</span>
+<span class="n">targetCrsCode</span> <span class="o">=</span> <span class="s2">"epsg:3857"</span> <span class="o">//</span> <span class="n">The</span> <span class="n">most</span> <span class="n">common</span> <span class="n">meter</span><span class="o">-</span><span class="n">based</span> <span class="n">CRS</span>
 <span class="n">objectRDD</span><span class="o">.</span><span class="n">CRSTransform</span><span class="p">(</span><span class="n">sourceCrsCode</span><span class="p">,</span> <span class="n">targetCrsCode</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 </code></pre></div>
 </div>
@@ -6160,17 +6272,17 @@
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="n">objectRDD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">WktReader</span><span class="p">.</span><span class="n">readToGeometryRDD</span><span class="p">(</span><span class="n">sedona</span><span class="p">.</span><span class="n">sparkContext</span><span class="p">,</span><span class="w"> </span><span class="n">inputLocation</span><span class="p">,</span><span class="w"> </span><span class="n">wktColumn</span><span class="p">,</span><span class="w"> </span><span class="n">allowTopologyInvalidGeometries</span><span class="p">,</span><span class="w"> </span><span class="n">skipSyntaxInvalidGeometries</span><span class="p">)</span>
-<span class="n">objectRDD</span><span class="p">.</span><span class="nc">CRSTransform</span><span class="p">(</span><span class="s">&quot;epsg:4326&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;epsg:3857&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span>
+<span class="n">objectRDD</span><span class="p">.</span><span class="nc">CRSTransform</span><span class="p">(</span><span class="s">"epsg:4326"</span><span class="p">,</span><span class="w"> </span><span class="s">"epsg:3857"</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="n">SpatialRDD</span><span class="w"> </span><span class="n">objectRDD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WktReader</span><span class="p">.</span><span class="na">readToGeometryRDD</span><span class="p">(</span><span class="n">sedona</span><span class="p">.</span><span class="na">sparkContext</span><span class="p">,</span><span class="w"> </span><span class="n">inputLocation</span><span class="p">,</span><span class="w"> </span><span class="n">wktColumn</span><span class="p">,</span><span class="w"> </span><span class="n">allowTopologyInvalidGeometries</span><span class="p">,</span><span class="w"> </span><span class="n">skipSyntaxInvalidGeometries</span><span class="p">)</span>
-<span class="n">objectRDD</span><span class="p">.</span><span class="na">CRSTransform</span><span class="p">(</span><span class="s">&quot;epsg:4326&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;epsg:3857&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span>
+<span class="n">objectRDD</span><span class="p">.</span><span class="na">CRSTransform</span><span class="p">(</span><span class="s">"epsg:4326"</span><span class="p">,</span><span class="w"> </span><span class="s">"epsg:3857"</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="n">objectRDD</span> <span class="o">=</span> <span class="n">WktReader</span><span class="o">.</span><span class="n">readToGeometryRDD</span><span class="p">(</span><span class="n">sedona</span><span class="o">.</span><span class="n">sparkContext</span><span class="p">,</span> <span class="n">inputLocation</span><span class="p">,</span> <span class="n">wktColumn</span><span class="p">,</span> <span class="n">allowTopologyInvalidGeometries</span><span class="p">,</span> <span class="n">skipSyntaxInvalidGeometries</span><span class="p">)</span>
-<span class="n">objectRDD</span><span class="o">.</span><span class="n">CRSTransform</span><span class="p">(</span><span class="s2">&quot;epsg:4326&quot;</span><span class="p">,</span> <span class="s2">&quot;epsg:3857&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">objectRDD</span><span class="o">.</span><span class="n">CRSTransform</span><span class="p">(</span><span class="s2">"epsg:4326"</span><span class="p">,</span> <span class="s2">"epsg:3857"</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 </code></pre></div>
 </div>
 </div>
@@ -6243,7 +6355,7 @@
 <span class="n">query_result</span> <span class="o">=</span> <span class="n">RangeQueryRaw</span><span class="o">.</span><span class="n">SpatialRangeQuery</span><span class="p">(</span>
     <span class="n">spatial_rdd</span><span class="p">,</span> <span class="n">range_query_window</span><span class="p">,</span> <span class="n">consider_boundary_intersection</span><span class="p">,</span> <span class="n">using_index</span>
 <span class="p">)</span>
-<span class="n">gdf</span> <span class="o">=</span> <span class="n">StructuredAdapter</span><span class="o">.</span><span class="n">toDf</span><span class="p">(</span><span class="n">query_result</span><span class="p">,</span> <span class="n">spark</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;col1&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="s2">&quot;coln&quot;</span><span class="p">])</span>
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">StructuredAdapter</span><span class="o">.</span><span class="n">toDf</span><span class="p">(</span><span class="n">query_result</span><span class="p">,</span> <span class="n">spark</span><span class="p">,</span> <span class="p">[</span><span class="s2">"col1"</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="s2">"coln"</span><span class="p">])</span>
 </code></pre></div></p>
 </div>
 <h3 id="range-query-window">Range query window<a class="headerlink" href="#range-query-window" title="Permanent link">&para;</a></h3>
@@ -6384,8 +6496,8 @@ Example:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
 <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span>
     <span class="n">query_result</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">geom</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">userData</span><span class="p">])</span><span class="o">.</span><span class="n">collect</span><span class="p">(),</span>
-    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;geom&quot;</span><span class="p">,</span> <span class="s2">&quot;user_data&quot;</span><span class="p">],</span>
-    <span class="n">geometry</span><span class="o">=</span><span class="s2">&quot;geom&quot;</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"geom"</span><span class="p">,</span> <span class="s2">"user_data"</span><span class="p">],</span>
+    <span class="n">geometry</span><span class="o">=</span><span class="s2">"geom"</span>
 <span class="p">)</span>
 </code></pre></div>
 </div>
@@ -6711,7 +6823,7 @@ and jvm and in result operating on python object instead of native geometries.</
 <span class="p">)</span>
 
 <span class="n">gdf</span> <span class="o">=</span> <span class="n">StructuredAdapter</span><span class="o">.</span><span class="n">toDf</span><span class="p">(</span>
-    <span class="n">result</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;left_col1&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="s2">&quot;lefcoln&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;rightcol1&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="s2">&quot;rightcol2&quot;</span><span class="p">],</span> <span class="n">spark</span>
+    <span class="n">result</span><span class="p">,</span> <span class="p">[</span><span class="s2">"left_col1"</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="s2">"lefcoln"</span><span class="p">],</span> <span class="p">[</span><span class="s2">"rightcol1"</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="s2">"rightcol2"</span><span class="p">],</span> <span class="n">spark</span>
 <span class="p">)</span>
 </code></pre></div></p>
 </div>
@@ -6794,11 +6906,11 @@ Find the superheroes within 10 miles of each city</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="18:2"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><input id="__tabbed_18_2" name="__tabbed_18" type="radio" /><div class="tabbed-labels"><label for="__tabbed_18_1">Scala/Java</label><label for="__tabbed_18_2">Python</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="n">objectRDD</span><span class="p">.</span><span class="n">rawSpatialRDD</span><span class="p">.</span><span class="n">saveAsObjectFile</span><span class="p">(</span><span class="s">&quot;hdfs://PATH&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">objectRDD</span><span class="p">.</span><span class="n">rawSpatialRDD</span><span class="p">.</span><span class="n">saveAsObjectFile</span><span class="p">(</span><span class="s">"hdfs://PATH"</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="n">object_rdd</span><span class="o">.</span><span class="n">rawJvmSpatialRDD</span><span class="o">.</span><span class="n">saveAsObjectFile</span><span class="p">(</span><span class="s2">&quot;hdfs://PATH&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">object_rdd</span><span class="o">.</span><span class="n">rawJvmSpatialRDD</span><span class="o">.</span><span class="n">saveAsObjectFile</span><span class="p">(</span><span class="s2">"hdfs://PATH"</span><span class="p">)</span>
 </code></pre></div>
 </div>
 </div>
@@ -6810,7 +6922,7 @@ Find the superheroes within 10 miles of each city</p>
 <h3 id="save-an-spatialrdd-indexed">Save an SpatialRDD (indexed)<a class="headerlink" href="#save-an-spatialrdd-indexed" title="Permanent link">&para;</a></h3>
 <p>Indexed typed SpatialRDD and generic SpatialRDD can be saved to permanent storage. However, the indexed SpatialRDD has to be stored as a distributed object file.</p>
 <p>Use the following code to save an SpatialRDD as a distributed object file:</p>
-<div class="highlight"><pre><span></span><code>objectRDD.indexedRawRDD.saveAsObjectFile(&quot;hdfs://PATH&quot;)
+<div class="highlight"><pre><span></span><code>objectRDD.indexedRawRDD.saveAsObjectFile("hdfs://PATH")
 </code></pre></div>
 <h3 id="save-an-spatialrdd-spatialpartitioned-wo-indexed">Save an SpatialRDD (spatialPartitioned W/O indexed)<a class="headerlink" href="#save-an-spatialrdd-spatialpartitioned-wo-indexed" title="Permanent link">&para;</a></h3>
 <p>A spatial partitioned RDD can be saved to permanent storage but Spark is not able to maintain the same RDD partition Id of the original RDD. This will lead to wrong join query results. We are working on some solutions. Stay tuned!</p>
@@ -6820,16 +6932,16 @@ Find the superheroes within 10 miles of each city</p>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="n">savedRDD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nc">SpatialRDD</span><span class="p">[</span><span class="nc">Geometry</span><span class="p">]</span>
-<span class="n">savedRDD</span><span class="p">.</span><span class="n">rawSpatialRDD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">objectFile</span><span class="p">[</span><span class="nc">Geometry</span><span class="p">](</span><span class="s">&quot;hdfs://PATH&quot;</span><span class="p">)</span>
+<span class="n">savedRDD</span><span class="p">.</span><span class="n">rawSpatialRDD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">objectFile</span><span class="p">[</span><span class="nc">Geometry</span><span class="p">](</span><span class="s">"hdfs://PATH"</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="n">SpatialRDD</span><span class="w"> </span><span class="n">savedRDD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SpatialRDD</span><span class="o">&lt;</span><span class="n">Geometry</span><span class="o">&gt;</span>
-<span class="n">savedRDD</span><span class="p">.</span><span class="na">rawSpatialRDD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">objectFile</span><span class="o">&lt;</span><span class="n">Geometry</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;hdfs://PATH&quot;</span><span class="p">)</span>
+<span class="n">savedRDD</span><span class="p">.</span><span class="na">rawSpatialRDD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">objectFile</span><span class="o">&lt;</span><span class="n">Geometry</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"hdfs://PATH"</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="n">saved_rdd</span> <span class="o">=</span> <span class="n">load_spatial_rdd_from_disc</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="s2">&quot;hdfs://PATH&quot;</span><span class="p">,</span> <span class="n">GeoType</span><span class="o">.</span><span class="n">GEOMETRY</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">saved_rdd</span> <span class="o">=</span> <span class="n">load_spatial_rdd_from_disc</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="s2">"hdfs://PATH"</span><span class="p">,</span> <span class="n">GeoType</span><span class="o">.</span><span class="n">GEOMETRY</span><span class="p">)</span>
 </code></pre></div>
 </div>
 </div>
@@ -6839,17 +6951,17 @@ Find the superheroes within 10 miles of each city</p>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="n">savedRDD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nc">SpatialRDD</span><span class="p">[</span><span class="nc">Geometry</span><span class="p">]</span>
-<span class="n">savedRDD</span><span class="p">.</span><span class="n">indexedRawRDD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">objectFile</span><span class="p">[</span><span class="nc">SpatialIndex</span><span class="p">](</span><span class="s">&quot;hdfs://PATH&quot;</span><span class="p">)</span>
+<span class="n">savedRDD</span><span class="p">.</span><span class="n">indexedRawRDD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">objectFile</span><span class="p">[</span><span class="nc">SpatialIndex</span><span class="p">](</span><span class="s">"hdfs://PATH"</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="n">SpatialRDD</span><span class="w"> </span><span class="n">savedRDD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SpatialRDD</span><span class="o">&lt;</span><span class="n">Geometry</span><span class="o">&gt;</span>
-<span class="n">savedRDD</span><span class="p">.</span><span class="na">indexedRawRDD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">objectFile</span><span class="o">&lt;</span><span class="n">SpatialIndex</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;hdfs://PATH&quot;</span><span class="p">)</span>
+<span class="n">savedRDD</span><span class="p">.</span><span class="na">indexedRawRDD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">objectFile</span><span class="o">&lt;</span><span class="n">SpatialIndex</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"hdfs://PATH"</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="n">saved_rdd</span> <span class="o">=</span> <span class="n">SpatialRDD</span><span class="p">()</span>
-<span class="n">saved_rdd</span><span class="o">.</span><span class="n">indexedRawRDD</span> <span class="o">=</span> <span class="n">load_spatial_index_rdd_from_disc</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="s2">&quot;hdfs://PATH&quot;</span><span class="p">)</span>
+<span class="n">saved_rdd</span><span class="o">.</span><span class="n">indexedRawRDD</span> <span class="o">=</span> <span class="n">load_spatial_index_rdd_from_disc</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="s2">"hdfs://PATH"</span><span class="p">)</span>
 </code></pre></div>
 </div>
 </div>
@@ -6995,7 +7107,7 @@ Find the superheroes within 10 miles of each city</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["announce.dismiss", "content.code.copy", "content.action.edit", "search.highlight", "search.share", "search.suggest", "navigation.footer", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.tabs.sticky", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": ["latest"], "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../assets/javascripts/main.min.js"></script>
       

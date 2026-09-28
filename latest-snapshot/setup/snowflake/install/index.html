@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -35,7 +35,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -111,7 +111,7 @@
       </div>
     
     <div style="background: #CA463A; color: white; text-align: center; padding: 0.5rem;">
-    <a href="../../release-notes/" title="Announcement">Apache Sedona 1.9.0 is out now, featuring Spark 4.1 support, proj4sedona CRS transformation, Bing Tile functions, and more!</a>
+        <a href="../../release-notes/" title="Announcement">🎉 Apache Sedona 1.9.1 is out now! 🗺️ Geography SQL functions, Box2D & Box3D types, raster Python UDFs & more. Read the release notes →</a>
   </div>
   
       <!--
@@ -1765,6 +1765,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../tutorial/files/netcdfmetadata-sedona-spark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NetCDF metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../tutorial/files/stac-sedona-spark/" class="md-nav__link">
         
   
@@ -2921,6 +2949,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../api/sql/Raster-UDF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raster UDFs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../api/sql/Raster-affine-transformation/" class="md-nav__link">
         
   
@@ -3287,6 +3343,34 @@
     
   
     Sedona R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/geopandas-coverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GeoPandas API coverage
   
 
     
@@ -4048,6 +4132,34 @@
     
   
     Geometry Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/flink/Geography-Functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geography Functions
   
 
     
@@ -5717,8 +5829,8 @@
 <h2 id="step-2-upload-sedonas-jar-files-to-the-stage">Step 2: Upload Sedona's JAR files to the stage<a class="headerlink" href="#step-2-upload-sedonas-jar-files-to-the-stage" title="Permanent link">&para;</a></h2>
 <p>You will need to download the following 2 JAR files:</p>
 <ul>
-<li>sedona-snowflake-1.9.0.jar: <a href="https://central.sonatype.com/artifact/org.apache.sedona/sedona-snowflake/versions">Sedona's Maven Central repository</a></li>
-<li>geotools-wrapper-1.9.0-33.5.jar: <a href="https://central.sonatype.com/artifact/org.datasyslab/geotools-wrapper/versions">GeoTools-wrapper's Maven Central repository</a></li>
+<li>sedona-snowflake-1.9.1.jar: <a href="https://central.sonatype.com/artifact/org.apache.sedona/sedona-snowflake/versions">Sedona's Maven Central repository</a></li>
+<li>geotools-wrapper-1.9.1-33.5.jar: <a href="https://central.sonatype.com/artifact/org.datasyslab/geotools-wrapper/versions">GeoTools-wrapper's Maven Central repository</a></li>
 </ul>
 <p>Then you can upload the 2 JAR files to the stage created in the previous step.</p>
 <p>After uploading the 2 JAR files, you should be able to see the 2 JAR files in the stage.</p>
@@ -5733,9 +5845,9 @@
 <p>You can refer to <a href="https://docs.snowflake.com/en/sql-reference/sql/create-schema.html">Snowflake Documentation</a> to how to create a schema.</p>
 <h2 id="step-4-get-the-sql-script-for-creating-sedonas-functions">Step 4: Get the SQL script for creating Sedona's functions<a class="headerlink" href="#step-4-get-the-sql-script-for-creating-sedonas-functions" title="Permanent link">&para;</a></h2>
 <p>You will need to get this SQL script by running the following command:</p>
-<div class="highlight"><pre><span></span><code>java<span class="w"> </span>-jar<span class="w"> </span>sedona-snowflake-1.9.0.jar<span class="w"> </span>--geotools-version<span class="w"> </span><span class="m">1</span>.9.0-33.5<span class="w"> </span>&gt;<span class="w"> </span>sedona-snowflake.sql
+<div class="highlight"><pre><span></span><code>java<span class="w"> </span>-jar<span class="w"> </span>sedona-snowflake-1.9.1.jar<span class="w"> </span>--geotools-version<span class="w"> </span><span class="m">1</span>.9.1-33.5<span class="w"> </span>&gt;<span class="w"> </span>sedona-snowflake.sql
 </code></pre></div>
-<p>sedona-snowflake-1.9.0.jar is the JAR file downloaded in Step 2.</p>
+<p>sedona-snowflake-1.9.1.jar is the JAR file downloaded in Step 2.</p>
 <h2 id="step-5-run-the-sql-script-to-create-sedonas-functions">Step 5: Run the SQL script to create Sedona's functions<a class="headerlink" href="#step-5-run-the-sql-script-to-create-sedonas-functions" title="Permanent link">&para;</a></h2>
 <p>We will create a worksheet in the database created in the previous step, and run the SQL script to create Sedona's functions.</p>
 <p>In this case, we will choose the option <code>Create Worksheet from SQL File</code>.</p>
@@ -5892,7 +6004,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["announce.dismiss", "content.code.copy", "content.action.edit", "search.highlight", "search.share", "search.suggest", "navigation.footer", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.tabs.sticky", "navigation.top"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": ["latest"], "provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../assets/javascripts/main.min.js"></script>
       

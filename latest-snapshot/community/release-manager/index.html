@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -35,7 +35,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -111,7 +111,7 @@
       </div>
     
     <div style="background: #CA463A; color: white; text-align: center; padding: 0.5rem;">
-    <a href="../../setup/release-notes/" title="Announcement">Apache Sedona 1.9.0 is out now, featuring Spark 4.1 support, proj4sedona CRS transformation, Bing Tile functions, and more!</a>
+        <a href="../../setup/release-notes/" title="Announcement">🎉 Apache Sedona 1.9.1 is out now! 🗺️ Geography SQL functions, Box2D & Box3D types, raster Python UDFs & more. Read the release notes →</a>
   </div>
   
       <!--
@@ -1765,6 +1765,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../tutorial/files/netcdfmetadata-sedona-spark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NetCDF metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../tutorial/files/stac-sedona-spark/" class="md-nav__link">
         
   
@@ -2921,6 +2949,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../api/sql/Raster-UDF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raster UDFs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../api/sql/Raster-affine-transformation/" class="md-nav__link">
         
   
@@ -3287,6 +3343,34 @@
     
   
     Sedona R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/geopandas-coverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GeoPandas API coverage
   
 
     
@@ -4048,6 +4132,34 @@
     
   
     Geometry Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/flink/Geography-Functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geography Functions
   
 
     
@@ -5716,13 +5828,13 @@
 <li>Open it in the terminal (with <code>sudo</code> if needed). It will be like this</li>
 </ol>
 <div class="highlight"><pre><span></span><code>#!/bin/bash
-JAVA_HOME=&quot;${JAVA_HOME:-$(/usr/libexec/java_home)}&quot; exec &quot;/usr/local/Cellar/maven/3.6.3/libexec/bin/mvn&quot; &quot;$@&quot;
+JAVA_HOME="${JAVA_HOME:-$(/usr/libexec/java_home)}" exec "/usr/local/Cellar/maven/3.6.3/libexec/bin/mvn" "$@"
 </code></pre></div>
 <ol>
 <li>Change <code>JAVA_HOME:-$(/usr/libexec/java_home)}</code> to <code>JAVA_HOME:-$(/usr/libexec/java_home -v 11)}</code> or <code>JAVA_HOME:-$(/usr/libexec/java_home -v 17)}</code>. The resulting content will be like this:</li>
 </ol>
 <div class="highlight"><pre><span></span><code>#!/bin/bash
-JAVA_HOME=&quot;${JAVA_HOME:-$(/usr/libexec/java_home -v 11)}&quot; exec &quot;/usr/local/Cellar/maven/3.6.3/libexec/bin/mvn&quot; &quot;$@&quot;
+JAVA_HOME="${JAVA_HOME:-$(/usr/libexec/java_home -v 11)}" exec "/usr/local/Cellar/maven/3.6.3/libexec/bin/mvn" "$@"
 </code></pre></div>
 <ol>
 <li>Run <code>mvn --version</code> again. It should now point to JDK 11 or 17.</li>
@@ -5776,8 +5888,8 @@ svn<span class="w"> </span>checkout<span class="w"> </span>https://dist.apache.o
 <li>Paste your armored key to the end of both files. Note: There must be an empty line between <code>-----BEGIN PGP PUBLIC KEY BLOCK-----</code> and the actual key.</li>
 <li>Commit both KEYS. SVN might ask you to enter your ASF ID and password. Make sure you do it so SVN can always store your ID and password locally.</li>
 </ol>
-<div class="highlight"><pre><span></span><code>svn<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Update KEYS&quot;</span><span class="w"> </span>sedona-dev/KEYS
-svn<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Update KEYS&quot;</span><span class="w"> </span>sedona-release/KEYS
+<div class="highlight"><pre><span></span><code>svn<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Update KEYS"</span><span class="w"> </span>sedona-dev/KEYS
+svn<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Update KEYS"</span><span class="w"> </span>sedona-release/KEYS
 </code></pre></div>
 <ol>
 <li>Then remove both svn folders</li>
@@ -5979,7 +6091,7 @@ rm<span class="w"> </span>-rf<span class="w"> </span>sedona-release
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["announce.dismiss", "content.code.copy", "content.action.edit", "search.highlight", "search.share", "search.suggest", "navigation.footer", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.tabs.sticky", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": ["latest"], "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../assets/javascripts/main.min.js"></script>
       

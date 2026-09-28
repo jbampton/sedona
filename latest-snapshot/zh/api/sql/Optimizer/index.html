@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -35,7 +35,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -111,7 +111,7 @@
       </div>
     
     <div style="background: #CA463A; color: white; text-align: center; padding: 0.5rem;">
-    <a href="../../../../setup/release-notes/" title="Announcement">Apache Sedona 1.9.0 已正式发布，新增 Spark 4.1 支持、proj4sedona 坐标系转换、Bing Tile 函数等众多特性！</a>
+        <a href="../../../../setup/release-notes/" title="Announcement">🎉 Apache Sedona 1.9.1 已正式发布！🗺️ 新增 Geography SQL 函数、Box2D 与 Box3D 类型、栅格 Python UDF 等。查看发布说明 →</a>
   </div>
   
       <!--
@@ -1770,6 +1770,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../tutorial/files/netcdfmetadata-sedona-spark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NetCDF metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../tutorial/files/stac-sedona-spark/" class="md-nav__link">
         
   
@@ -3135,6 +3163,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../Raster-UDF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    栅格 UDF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Raster-affine-transformation/" class="md-nav__link">
         
   
@@ -3501,6 +3557,34 @@
     
   
     Sedona R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geopandas-coverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GeoPandas API 覆盖情况
   
 
     
@@ -4262,6 +4346,34 @@
     
   
     几何函数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flink/Geography-Functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    地理函数
   
 
     
@@ -6009,7 +6121,7 @@ DistanceJoin pointshape1#12: geometry, pointshape2#33: geometry, 2.0, true
 <li>Left outer —— 广播右侧</li>
 <li>Right outer —— 广播左侧</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">pointDf</span><span class="p">.</span><span class="n">alias</span><span class="p">(</span><span class="s">&quot;pointDf&quot;</span><span class="p">).</span><span class="n">join</span><span class="p">(</span><span class="n">broadcast</span><span class="p">(</span><span class="n">polygonDf</span><span class="p">).</span><span class="n">alias</span><span class="p">(</span><span class="s">&quot;polygonDf&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">expr</span><span class="p">(</span><span class="s">&quot;ST_Contains(polygonDf.polygonshape, pointDf.pointshape)&quot;</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><span class="n">pointDf</span><span class="p">.</span><span class="n">alias</span><span class="p">(</span><span class="s">"pointDf"</span><span class="p">).</span><span class="n">join</span><span class="p">(</span><span class="n">broadcast</span><span class="p">(</span><span class="n">polygonDf</span><span class="p">).</span><span class="n">alias</span><span class="p">(</span><span class="s">"polygonDf"</span><span class="p">),</span><span class="w"> </span><span class="n">expr</span><span class="p">(</span><span class="s">"ST_Contains(polygonDf.polygonshape, pointDf.pointshape)"</span><span class="p">))</span>
 </code></pre></div>
 <p>在 SQL 中指定 broadcast 提示，使用以下语法：</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="cm">/*+ BROADCAST(polygonDf) */</span>
@@ -6029,7 +6141,7 @@ BroadcastIndexJoin pointshape#52: geometry, BuildRight, BuildRight, false ST_Con
       +- FileScan csv
 </code></pre></div>
 <p>这同样适用于使用 <code>ST_Distance</code>、<code>ST_DistanceSpheroid</code>、<code>ST_DistanceSphere</code>、<code>ST_HausdorffDistance</code> 或 <code>ST_FrechetDistance</code> 的距离连接：</p>
-<div class="highlight"><pre><span></span><code><span class="n">pointDf1</span><span class="p">.</span><span class="n">alias</span><span class="p">(</span><span class="s">&quot;pointDf1&quot;</span><span class="p">).</span><span class="n">join</span><span class="p">(</span><span class="n">broadcast</span><span class="p">(</span><span class="n">pointDf2</span><span class="p">).</span><span class="n">alias</span><span class="p">(</span><span class="s">&quot;pointDf2&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">expr</span><span class="p">(</span><span class="s">&quot;ST_Distance(pointDf1.pointshape, pointDf2.pointshape) &lt;= 2&quot;</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><span class="n">pointDf1</span><span class="p">.</span><span class="n">alias</span><span class="p">(</span><span class="s">"pointDf1"</span><span class="p">).</span><span class="n">join</span><span class="p">(</span><span class="n">broadcast</span><span class="p">(</span><span class="n">pointDf2</span><span class="p">).</span><span class="n">alias</span><span class="p">(</span><span class="s">"pointDf2"</span><span class="p">),</span><span class="w"> </span><span class="n">expr</span><span class="p">(</span><span class="s">"ST_Distance(pointDf1.pointshape, pointDf2.pointshape) &lt;= 2"</span><span class="p">))</span>
 </code></pre></div>
 <p>Spark SQL 物理计划：</p>
 <div class="highlight"><pre><span></span><code>== Physical Plan ==
@@ -6297,7 +6409,7 @@ ORDER BY geohash
       <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["announce.dismiss", "content.code.copy", "content.action.edit", "search.highlight", "search.share", "search.suggest", "navigation.footer", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.tabs.sticky", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"default": ["latest"], "provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../../assets/javascripts/main.min.js"></script>
       

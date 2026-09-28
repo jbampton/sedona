@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -35,7 +35,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -111,7 +111,7 @@
       </div>
     
     <div style="background: #CA463A; color: white; text-align: center; padding: 0.5rem;">
-    <a href="../../../setup/release-notes/" title="Announcement">Apache Sedona 1.9.0 已正式发布，新增 Spark 4.1 支持、proj4sedona 坐标系转换、Bing Tile 函数等众多特性！</a>
+        <a href="../../../setup/release-notes/" title="Announcement">🎉 Apache Sedona 1.9.1 已正式发布！🗺️ 新增 Geography SQL 函数、Box2D 与 Box3D 类型、栅格 Python UDF 等。查看发布说明 →</a>
   </div>
   
       <!--
@@ -1900,6 +1900,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../tutorial/files/netcdfmetadata-sedona-spark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NetCDF metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../tutorial/files/stac-sedona-spark/" class="md-nav__link">
         
   
@@ -3056,6 +3084,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../api/sql/Raster-UDF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    栅格 UDF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../api/sql/Raster-affine-transformation/" class="md-nav__link">
         
   
@@ -3422,6 +3478,34 @@
     
   
     Sedona R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/geopandas-coverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GeoPandas API 覆盖情况
   
 
     
@@ -4183,6 +4267,34 @@
     
   
     几何函数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/flink/Geography-Functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    地理函数
   
 
     
@@ -5723,18 +5835,18 @@
 <p>执行以下命令下载所需的 Sedona 包：</p>
 <div class="highlight"><pre><span></span><code>%sh
 <span class="c1"># 为 Sedona 创建 JAR 目录</span>
-mkdir<span class="w"> </span>-p<span class="w"> </span>/Workspace/Shared/sedona/1.9.0
+mkdir<span class="w"> </span>-p<span class="w"> </span>/Workspace/Shared/sedona/1.9.1
 
 <span class="c1"># 从 Maven 下载依赖到 DBFS</span>
-curl<span class="w"> </span>-o<span class="w"> </span>/Workspace/Shared/sedona/1.9.0/geotools-wrapper-1.9.0-33.5.jar<span class="w"> </span><span class="s2">&quot;https://repo1.maven.org/maven2/org/datasyslab/geotools-wrapper/1.9.0-33.5/geotools-wrapper-1.9.0-33.5.jar&quot;</span>
+curl<span class="w"> </span>-o<span class="w"> </span>/Workspace/Shared/sedona/1.9.1/geotools-wrapper-1.9.1-33.5.jar<span class="w"> </span><span class="s2">"https://repo1.maven.org/maven2/org/datasyslab/geotools-wrapper/1.9.1-33.5/geotools-wrapper-1.9.1-33.5.jar"</span>
 
-curl<span class="w"> </span>-o<span class="w"> </span>/Workspace/Shared/sedona/1.9.0/sedona-spark-shaded-3.5_2.12-1.9.0.jar<span class="w"> </span><span class="s2">&quot;https://repo1.maven.org/maven2/org/apache/sedona/sedona-spark-shaded-3.5_2.12/1.9.0/sedona-spark-shaded-3.5_2.12-1.9.0.jar&quot;</span>
+curl<span class="w"> </span>-o<span class="w"> </span>/Workspace/Shared/sedona/1.9.1/sedona-spark-shaded-3.5_2.12-1.9.1.jar<span class="w"> </span><span class="s2">"https://repo1.maven.org/maven2/org/apache/sedona/sedona-spark-shaded-3.5_2.12/1.9.1/sedona-spark-shaded-3.5_2.12-1.9.1.jar"</span>
 </code></pre></div>
-<p><code>sedona-spark-shaded-3.5_2.12-1.9.0.jar</code> 的编译环境如下：</p>
+<p><code>sedona-spark-shaded-3.5_2.12-1.9.1.jar</code> 的编译环境如下：</p>
 <ul>
 <li>Spark 3.5</li>
 <li>Scala 2.12</li>
-<li>Sedona 1.9.0</li>
+<li>Sedona 1.9.1</li>
 </ul>
 <p>请确保使用与该 jar 兼容的 Databricks Runtime。</p>
 <p>下载完成后，您应在 Databricks 环境中看到这些文件：</p>
@@ -5746,7 +5858,7 @@ curl<span class="w"> </span>-o<span class="w"> </span>/Workspace/Shared/sedona/1
 mkdir -p /Workspace/Shared/sedona/
 
 # 创建初始化脚本
-cat &gt; /Workspace/Shared/sedona/sedona-init.sh &lt;&lt;&#39;EOF&#39;
+cat &gt; /Workspace/Shared/sedona/sedona-init.sh &lt;&lt;'EOF'
 #!/bin/bash
 #
 # File: sedona-init.sh
@@ -5758,7 +5870,7 @@ cat &gt; /Workspace/Shared/sedona/sedona-init.sh &lt;&lt;&#39;EOF&#39;
 # 如果您需要使用 Sedona 的 H3 函数（如 ST_H3CellIDs），请取消下一行的注释。
 # rm -f /databricks/jars/*h3*.jar
 
-cp /Workspace/Shared/sedona/1.9.0/*.jar /databricks/jars
+cp /Workspace/Shared/sedona/1.9.1/*.jar /databricks/jars
 
 EOF
 </code></pre></div>
@@ -5780,7 +5892,7 @@ spark.sedona.enableParserExtension false
 <p>在 Library 选项卡中加入所需依赖：</p>
 <p><img alt="Python 库" src="../../../image/databricks/image7.png" /></p>
 <p>完整库列表如下：</p>
-<div class="highlight"><pre><span></span><code>apache-sedona==1.9.0
+<div class="highlight"><pre><span></span><code>apache-sedona==1.9.1
 geopandas==1.0.1
 keplergl==0.3.7
 pydeck==0.9.1
@@ -5800,16 +5912,16 @@ pydeck==0.9.1
 <p>下面演示如何创建带几何列的 Sedona DataFrame：</p>
 <div class="highlight"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">sedona</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span>
     <span class="p">[</span>
-        <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;POLYGON((1.0 1.0,1.0 3.0,2.0 3.0,2.0 1.0,1.0 1.0))&quot;</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;LINESTRING(4.0 1.0,4.0 2.0,6.0 4.0)&quot;</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;POINT(9.0 2.0)&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"POLYGON((1.0 1.0,1.0 3.0,2.0 3.0,2.0 1.0,1.0 1.0))"</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">"b"</span><span class="p">,</span> <span class="s2">"LINESTRING(4.0 1.0,4.0 2.0,6.0 4.0)"</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">"c"</span><span class="p">,</span> <span class="s2">"POINT(9.0 2.0)"</span><span class="p">),</span>
     <span class="p">],</span>
-    <span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;geometry&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">"id"</span><span class="p">,</span> <span class="s2">"geometry"</span><span class="p">],</span>
 <span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;geometry&quot;</span><span class="p">,</span> <span class="n">expr</span><span class="p">(</span><span class="s2">&quot;ST_GeomFromWKT(geometry)&quot;</span><span class="p">))</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">"geometry"</span><span class="p">,</span> <span class="n">expr</span><span class="p">(</span><span class="s2">"ST_GeomFromWKT(geometry)"</span><span class="p">))</span>
 </code></pre></div>
 <p>将 Sedona DataFrame 写入 Delta Lake 表：</p>
-<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">saveAsTable</span><span class="p">(</span><span class="s2">&quot;your_org.default.geotable&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">saveAsTable</span><span class="p">(</span><span class="s2">"your_org.default.geotable"</span><span class="p">)</span>
 </code></pre></div>
 <p>读取该表的方式：<code>sedona.table("your_org.default.geotable").display()</code></p>
 <p>在 Databricks 中的结果大致如下：</p>
@@ -5967,7 +6079,7 @@ pydeck==0.9.1
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["announce.dismiss", "content.code.copy", "content.action.edit", "search.highlight", "search.share", "search.suggest", "navigation.footer", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.tabs.sticky", "navigation.top"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"default": ["latest"], "provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../assets/javascripts/main.min.js"></script>
       

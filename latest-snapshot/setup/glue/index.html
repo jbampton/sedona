@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -35,7 +35,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -111,7 +111,7 @@
       </div>
     
     <div style="background: #CA463A; color: white; text-align: center; padding: 0.5rem;">
-    <a href="../release-notes/" title="Announcement">Apache Sedona 1.9.0 is out now, featuring Spark 4.1 support, proj4sedona CRS transformation, Bing Tile functions, and more!</a>
+        <a href="../release-notes/" title="Announcement">🎉 Apache Sedona 1.9.1 is out now! 🗺️ Geography SQL functions, Box2D & Box3D types, raster Python UDFs & more. Read the release notes →</a>
   </div>
   
       <!--
@@ -1867,6 +1867,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../tutorial/files/netcdfmetadata-sedona-spark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NetCDF metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../tutorial/files/stac-sedona-spark/" class="md-nav__link">
         
   
@@ -3023,6 +3051,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../api/sql/Raster-UDF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raster UDFs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../api/sql/Raster-affine-transformation/" class="md-nav__link">
         
   
@@ -3389,6 +3445,34 @@
     
   
     Sedona R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/geopandas-coverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GeoPandas API coverage
   
 
     
@@ -4150,6 +4234,34 @@
     
   
     Geometry Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/flink/Geography-Functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geography Functions
   
 
     
@@ -5648,7 +5760,7 @@
 <p>This tutorial will cover how to configure both a glue notebook and a glue ETL job. The tutorial is written assuming you
 have a working knowledge of AWS Glue jobs.</p>
 <p>In the tutorial, we use
-Sedona 1.9.0 and <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html">Glue 5.0</a> which runs on Spark 3.5.4, Java 17, Scala 2.12,
+Sedona 1.9.1 and <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html">Glue 5.0</a> which runs on Spark 3.5.4, Java 17, Scala 2.12,
 and Python 3.11. We recommend Sedona 1.8.0 and above for Glue 5.0.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -5656,8 +5768,8 @@ and Python 3.11. We recommend Sedona 1.8.0 and above for Glue 5.0.</p>
 </div>
 <h2 id="gather-maven-links">Gather Maven Links<a class="headerlink" href="#gather-maven-links" title="Permanent link">&para;</a></h2>
 <p>You will need to point your glue job to the Sedona and Geotools jars. We recommend using the jars available from maven. The links below are those intended for Glue 5.0.</p>
-<p>Sedona Jar: <a href="https://repo1.maven.org/maven2/org/apache/sedona/sedona-spark-shaded-3.5_2.12/1.9.0/sedona-spark-shaded-3.5_2.12-1.9.0.jar">Maven Central</a></p>
-<p>Geotools Jar: <a href="https://repo1.maven.org/maven2/org/datasyslab/geotools-wrapper/1.9.0-33.5/geotools-wrapper-1.9.0-33.5.jar">Maven Central</a></p>
+<p>Sedona Jar: <a href="https://repo1.maven.org/maven2/org/apache/sedona/sedona-spark-shaded-3.5_2.12/1.9.1/sedona-spark-shaded-3.5_2.12-1.9.1.jar">Maven Central</a></p>
+<p>Geotools Jar: <a href="https://repo1.maven.org/maven2/org/datasyslab/geotools-wrapper/1.9.1-33.5/geotools-wrapper-1.9.1-33.5.jar">Maven Central</a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Ensure you pick a version for Scala 2.12 and Spark 3.5. The Scala
@@ -5674,8 +5786,8 @@ package. How you do this varies slightly between the notebook and the script job
 <p>Add the following cell magics before starting your sparkContext or glueContext. The first points to the jars,
 and the second installs the Sedona Python package directly from pip.</p>
 <div class="highlight"><pre><span></span><code># Sedona Config
-%extra_jars https://repo1.maven.org/maven2/org/apache/sedona/sedona-spark-shaded-3.5_2.12/1.9.0/sedona-spark-shaded-3.5_2.12-1.9.0.jar, https://repo1.maven.org/maven2/org/datasyslab/geotools-wrapper/1.9.0-33.5/geotools-wrapper-1.9.0-33.5.jar
-%additional_python_modules apache-sedona==1.9.0
+%extra_jars https://repo1.maven.org/maven2/org/apache/sedona/sedona-spark-shaded-3.5_2.12/1.9.1/sedona-spark-shaded-3.5_2.12-1.9.1.jar, https://repo1.maven.org/maven2/org/datasyslab/geotools-wrapper/1.9.1-33.5/geotools-wrapper-1.9.1-33.5.jar
+%additional_python_modules apache-sedona==1.9.1
 </code></pre></div>
 <p>If you are using the example notebook from glue, the first cell should now look like this:</p>
 <div class="highlight"><pre><span></span><code>%idle_timeout 2880
@@ -5684,8 +5796,8 @@ and the second installs the Sedona Python package directly from pip.</p>
 %number_of_workers 5
 
 # Sedona Config
-%extra_jars https://repo1.maven.org/maven2/org/apache/sedona/sedona-spark-shaded-3.5_2.12/1.9.0/sedona-spark-shaded-3.5_2.12-1.9.0.jar, https://repo1.maven.org/maven2/org/datasyslab/geotools-wrapper/1.9.0-33.5/geotools-wrapper-1.9.0-33.5.jar
-%additional_python_modules apache-sedona==1.9.0
+%extra_jars https://repo1.maven.org/maven2/org/apache/sedona/sedona-spark-shaded-3.5_2.12/1.9.1/sedona-spark-shaded-3.5_2.12-1.9.1.jar, https://repo1.maven.org/maven2/org/datasyslab/geotools-wrapper/1.9.1-33.5/geotools-wrapper-1.9.1-33.5.jar
+%additional_python_modules apache-sedona==1.9.1
 
 
 import sys
@@ -5704,20 +5816,20 @@ job = Job(glueContext)
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sedona.spark</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">sedona</span> <span class="o">=</span> <span class="n">SedonaContext</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">spark</span><span class="p">)</span>
-<span class="n">sedona</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">&quot;SELECT ST_POINT(1., 2.) as geom&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">sedona</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">"SELECT ST_POINT(1., 2.) as geom"</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
 <h3 id="etl-job">ETL Job<a class="headerlink" href="#etl-job" title="Permanent link">&para;</a></h3>
 <p>Glue also calls these Scripts. From your job's page, navigate to the "Job details" tab. At the bottom of the page expand
 the "Advanced properties" section. In the "Dependent JARs path" field, add the paths to the jars, separated by a comma.</p>
 <p>To add the Sedona Python package, navigate to the "Job Parameters" section and add a new parameter with the key
-<code>--additional-python-modules</code> and the value <code>apache-sedona==1.9.0</code>.</p>
+<code>--additional-python-modules</code> and the value <code>apache-sedona==1.9.1</code>.</p>
 <p>To confirm the installation add the follow code to the script:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sedona.spark</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">config</span> <span class="o">=</span> <span class="n">SedonaContext</span><span class="o">.</span><span class="n">builder</span><span class="p">()</span><span class="o">.</span><span class="n">getOrCreate</span><span class="p">()</span>
 <span class="n">sedona</span> <span class="o">=</span> <span class="n">SedonaContext</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
 
-<span class="n">sedona</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">&quot;SELECT ST_POINT(1., 2.) as geom&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">sedona</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s2">"SELECT ST_POINT(1., 2.) as geom"</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
 <p>Once added to the script, save and run the job. If the job runs successfully, the installation was successful.</p>
 
@@ -5861,7 +5973,7 @@ the "Advanced properties" section. In the "Dependent JARs path" field, add the p
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["announce.dismiss", "content.code.copy", "content.action.edit", "search.highlight", "search.share", "search.suggest", "navigation.footer", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.tabs.sticky", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": ["latest"], "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../assets/javascripts/main.min.js"></script>
       

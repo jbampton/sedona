@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -35,7 +35,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -106,7 +106,7 @@
       </div>
     
     <div style="background: #CA463A; color: white; text-align: center; padding: 0.5rem;">
-    <a href="../../../setup/release-notes/" title="Announcement">Apache Sedona 1.9.0 is out now, featuring Spark 4.1 support, proj4sedona CRS transformation, Bing Tile functions, and more!</a>
+        <a href="../../../setup/release-notes/" title="Announcement">🎉 Apache Sedona 1.9.1 is out now! 🗺️ Geography SQL functions, Box2D & Box3D types, raster Python UDFs & more. Read the release notes →</a>
   </div>
   
       <!--
@@ -1760,6 +1760,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../files/netcdfmetadata-sedona-spark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NetCDF metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../files/stac-sedona-spark/" class="md-nav__link">
         
   
@@ -2916,6 +2944,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../api/sql/Raster-UDF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raster UDFs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../api/sql/Raster-affine-transformation/" class="md-nav__link">
         
   
@@ -3282,6 +3338,34 @@
     
   
     Sedona R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/geopandas-coverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GeoPandas API coverage
   
 
     
@@ -4060,6 +4144,34 @@
     
   
     Geometry Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/flink/Geography-Functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geography Functions
   
 
     
@@ -5507,14 +5619,14 @@ When you finish it, you can run the following code to test if everything works.<
 <span class="n">flink_settings</span> <span class="o">=</span> <span class="n">EnvironmentSettings</span><span class="o">.</span><span class="n">in_streaming_mode</span><span class="p">()</span>
 <span class="n">table_env</span> <span class="o">=</span> <span class="n">SedonaContext</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">stream_env</span><span class="p">,</span> <span class="n">flink_settings</span><span class="p">)</span>
 
-<span class="n">table_env</span><span class="o">.</span><span class="n">sql_query</span><span class="p">(</span><span class="s2">&quot;SELECT ST_Point(1.0, 2.0)&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+<span class="n">table_env</span><span class="o">.</span><span class="n">sql_query</span><span class="p">(</span><span class="s2">"SELECT ST_Point(1.0, 2.0)"</span><span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
 </code></pre></div>
 <p>PyFlink does not expose the possibility of transforming Scala's own user-defined types (UDT) to Python UDT.
 So, when you want to collect the result in Python, you need to use functions
 like <code>ST_AsText</code> or <code>ST_ASBinary</code> to convert the result to a string or binary.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">shapely.wkb</span><span class="w"> </span><span class="kn">import</span> <span class="n">loads</span>
 
-<span class="n">table_env</span><span class="o">.</span><span class="n">sql_query</span><span class="p">(</span><span class="s2">&quot;SELECT ST_ASBinary(ST_Point(1.0, 2.0))&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="n">table_env</span><span class="o">.</span><span class="n">sql_query</span><span class="p">(</span><span class="s2">"SELECT ST_ASBinary(ST_Point(1.0, 2.0))"</span><span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 
 <span class="p">[</span><span class="n">loads</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="n">el</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">result</span><span class="p">]</span>
 </code></pre></div>
@@ -5532,11 +5644,11 @@ like <code>ST_AsText</code> or <code>ST_ASBinary</code> to convert the result to
 
 
 <span class="n">table_env</span><span class="o">.</span><span class="n">create_temporary_function</span><span class="p">(</span>
-    <span class="s2">&quot;ST_BufferPython&quot;</span><span class="p">,</span> <span class="n">udf</span><span class="p">(</span><span class="n">Buffer</span><span class="p">(),</span> <span class="n">result_type</span><span class="o">=</span><span class="s2">&quot;Binary&quot;</span><span class="p">)</span>
+    <span class="s2">"ST_BufferPython"</span><span class="p">,</span> <span class="n">udf</span><span class="p">(</span><span class="n">Buffer</span><span class="p">(),</span> <span class="n">result_type</span><span class="o">=</span><span class="s2">"Binary"</span><span class="p">)</span>
 <span class="p">)</span>
 
 <span class="n">buffer_table</span> <span class="o">=</span> <span class="n">table_env</span><span class="o">.</span><span class="n">sql_query</span><span class="p">(</span>
-    <span class="s2">&quot;SELECT ST_BufferPython(ST_ASBinary(ST_Point(1.0, 2.0))) AS buffer&quot;</span>
+    <span class="s2">"SELECT ST_BufferPython(ST_ASBinary(ST_Point(1.0, 2.0))) AS buffer"</span>
 <span class="p">)</span>
 </code></pre></div>
 <p>For more SQL examples please follow the FlinkSQL section <a href="../sql/">FlinkSQL</a>.</p>
@@ -5681,7 +5793,7 @@ like <code>ST_AsText</code> or <code>ST_ASBinary</code> to convert the result to
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["announce.dismiss", "content.code.copy", "content.action.edit", "search.highlight", "search.share", "search.suggest", "navigation.footer", "navigation.instant", "navigation.instant.prefetch", "navigation.tabs", "navigation.tabs.sticky", "navigation.top"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": ["latest"], "provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../assets/javascripts/main.min.js"></script>
       
